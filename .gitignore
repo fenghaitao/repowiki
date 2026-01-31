@@ -1,0 +1,32 @@
+# LightRAG storage
+lightrag_storage/
+*.json
+
+# Generated wiki (optional - you might want to commit this)
+# wiki_docs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
