@@ -38,11 +38,29 @@ pip install -e .
 ### CLI Commands
 
 ```bash
-repowiki test       # Test your setup
-repowiki index      # Index repository
-repowiki generate   # Generate wiki
-repowiki all        # Run everything (recommended)
-repowiki --help     # Show all options
+# Test your setup
+repowiki test
+
+# Index repository
+repowiki index
+
+# Generate base wiki (fast, ~30 pages)
+repowiki generate
+
+# Generate extended wiki (comprehensive, ~70 pages)
+repowiki generate --extended
+
+# Generate with specific model
+repowiki generate --model gpt-4o
+
+# Run everything (index + generate)
+repowiki all
+
+# Run everything with extended wiki
+repowiki all --extended
+
+# Show all options
+repowiki --help
 ```
 
 ### Python API
@@ -61,8 +79,12 @@ config = Config(
 indexer = RepositoryIndexer(config)
 await indexer.index_repository()
 
-# Generate wiki
+# Generate base wiki
 generator = WikiGenerator(config)
+await generator.generate_all()
+
+# Generate extended wiki
+generator = WikiGenerator(config, extended=True)
 await generator.generate_all()
 ```
 
@@ -97,25 +119,31 @@ repowiki/
 
 ## 📊 Output Structure
 
+### Base Wiki (~30 pages)
+
+```
+wiki_docs/
+├── README.md                    # Home page
+└── 01-overview/                 # Overview & architecture
+    ├── project-overview.md
+    ├── architecture.md
+    └── design-decisions.md
+```
+
+### Extended Wiki (~70 pages)
+
 ```
 wiki_docs/
 ├── README.md                    # Home page
 ├── 01-overview/                 # Overview & architecture
-│   ├── project-overview.md
-│   ├── architecture.md
-│   └── design-decisions.md
-├── 02-modules/                  # Module documentation
-│   ├── core/
-│   ├── storage/
-│   ├── llm/
-│   └── api/
-├── 03-guides/                   # Getting started
-├── 04-api-reference/            # API docs
-├── 05-development/              # Development guides
-└── 06-troubleshooting/          # FAQ
-
-~30 pages in hierarchical structure
+├── 02-getting-started/          # Installation & quick start
+├── 03-api-reference/            # API documentation
+├── 04-storage-backends/         # Storage options
+├── 05-llm-integration/          # LLM providers
+└── 06-examples/                 # Usage examples
 ```
+
+Use `repowiki generate --extended` for comprehensive documentation.
 
 ## 🔧 Configuration
 
@@ -169,10 +197,12 @@ pytest tests/test_config.py
 
 ## 📈 Performance
 
-- **Indexing**: ~15-20 minutes for 150 files
-- **Generation**: ~20-30 minutes for 30 pages
-- **Total**: 30-60 minutes
-- **Cost**: FREE (uses GitHub Copilot models)
+| Mode | Pages | Time | Cost |
+|------|-------|------|------|
+| Base | ~30 | 10-15 min | FREE |
+| Extended | ~70 | 20-30 min | FREE |
+
+**Note**: Times are with parallel processing enabled. Uses GitHub Copilot models (free).
 
 ## 📚 Documentation
 

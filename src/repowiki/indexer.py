@@ -38,7 +38,7 @@ class RepositoryIndexer:
         self.LiteLLM = LiteLLM
         self.LiteLLMEmbedding = LiteLLMEmbedding
         
-        print(f"🤖 Using GitHub Copilot models (like lightrag_openspec)")
+        print(f"🤖 Using GitHub Copilot models")
         print(f"   LLM: {self.config.llm_model_name}")
         print(f"   Embedding: {self.config.embedding_model_name}")
         
@@ -79,6 +79,10 @@ class RepositoryIndexer:
             llm_model_func=self._create_llm_func,
             embedding_func=embedding_func_wrapped,
             llm_model_name=self.config.llm_model_name,
+            # Parallel processing configuration (conservative for stability)
+            max_parallel_insert=8,   # Process 8 documents concurrently
+            llm_model_max_async=16,  # 16 concurrent LLM calls
+            embedding_func_max_async=8,   # 8 concurrent embedding calls
         )
         # Initialize storages (required for JsonDocStatusStorage)
         await self.rag.initialize_storages()
@@ -88,13 +92,13 @@ class RepositoryIndexer:
         """Collect files to index from repository"""
         repo_path = Path(self.config.lightrag_repo)
         
-        # File patterns to include
-        include_patterns = ['*.py', '*.md', '*.txt', '*.yaml', '*.yml', '*.json']
+        # File patterns to include (code and docs only)
+        include_patterns = ['*.py', '*.md', '*.txt']
         
         # Directories to exclude
         exclude_dirs = {
-            '.git', '__pycache__', '.pytest_cache', 'node_modules',
-            '.venv', 'venv', '.env', 'build', 'dist', '*.egg-info'
+            '__pycache__', '.pytest_cache', 'node_modules',
+            'venv', 'build', 'dist', '*.egg-info'
         }
         
         files = []
@@ -102,6 +106,10 @@ class RepositoryIndexer:
             for file_path in repo_path.rglob(pattern):
                 # Skip if in excluded directory
                 if any(excluded in file_path.parts for excluded in exclude_dirs):
+                    continue
+                
+                # Skip any directory starting with "." (hidden directories)
+                if any(part.startswith('.') for part in file_path.parts):
                     continue
                     
                 # Skip if too small
@@ -112,11 +120,11 @@ class RepositoryIndexer:
         
         return sorted(files)
     
-    async def index_file(self, file_path: Path) -> bool:
-        """Index a single file
+    async def read_file_content(self, file_path: Path) -> Tuple[bool, Optional[str], Optional[str]]:
+        """Read and prepare file content for indexing
         
         Returns:
-            True if successful, False otherwise
+            Tuple of (success: bool, content: str, rel_path: str)
         """
         try:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
@@ -124,7 +132,7 @@ class RepositoryIndexer:
             
             # Skip if content too small
             if len(content.strip()) < self.config.min_file_size:
-                return False
+                return False, None, None
             
             # Get relative path for better context
             rel_path = file_path.relative_to(self.config.lightrag_repo)
@@ -132,44 +140,92 @@ class RepositoryIndexer:
             # Add file context to content
             full_content = f"# File: {rel_path}\n\n{content}"
             
-            await self.rag.ainsert(full_content)
-            return True
+            return True, full_content, str(rel_path)
             
         except Exception as e:
-            print(f"   ✗ Error indexing {file_path.name}: {e}")
-            return False
+            print(f"   ✗ Error reading {file_path.name}: {e}")
+            return False, None, None
     
     async def index_repository(self) -> Tuple[int, int, int]:
-        """Index entire repository
+        """Index entire repository using parallel batch processing
         
         Returns:
             Tuple of (indexed_count, skipped_count, error_count)
         """
         print("=" * 80)
-        print("INDEXING REPOSITORY")
+        print("INDEXING REPOSITORY (PARALLEL MODE)")
         print("=" * 80)
         
         # Initialize RAG
         await self.initialize_rag()
         
+        print(f"⚡ Parallel processing enabled:")
+        print(f"   - max_parallel_insert: {self.rag.max_parallel_insert}")
+        print(f"   - llm_model_max_async: {self.rag.llm_model_max_async}")
+        print(f"   - embedding_func_max_async: {self.rag.embedding_func_max_async}")
+        print()
+        
         # Collect files
         files_to_index = self.collect_files()
+        print(f"📁 Found {len(files_to_index)} files to index")
+        print()
         
-        # Index files
-        indexed_count = 0
+        # Read all file contents
+        print("📖 Reading files...")
+        read_tasks = [self.read_file_content(f) for f in files_to_index]
+        read_results = await asyncio.gather(*read_tasks)
+        
+        # Separate successful reads from failures
+        contents = []
+        file_paths = []
         skipped_count = 0
-        error_count = 0
         
-        for i, file_path in enumerate(files_to_index, 1):
-            success = await self.index_file(file_path)
-            
+        for (success, content, rel_path) in read_results:
             if success:
-                indexed_count += 1
+                contents.append(content)
+                file_paths.append(rel_path)
             else:
                 skipped_count += 1
+        
+        print(f"✅ Successfully read {len(contents)} files")
+        print(f"⏭️  Skipped {skipped_count} files (too small or errors)")
+        print()
+        
+        if not contents:
+            print("⚠️  No files to index!")
+            return 0, skipped_count, 0
+        
+        # Use LightRAG's batch insert with automatic parallelization
+        print(f"🚀 Starting parallel batch indexing of {len(contents)} files...")
+        print(f"   This will process up to {self.rag.max_parallel_insert} documents concurrently")
+        print()
+        
+        try:
+            # LightRAG will automatically handle parallel processing
+            await self.rag.ainsert(
+                contents,
+                file_paths=file_paths,
+            )
             
-            if i % self.config.batch_report_interval == 0:
-                print(f"   ✓ Indexed {i}/{len(files_to_index)} files...")
+            indexed_count = len(contents)
+            error_count = 0
+            
+        except Exception as e:
+            print(f"\n❌ Error during batch indexing: {e}")
+            # Fall back to individual processing if batch fails
+            print("\n🔄 Falling back to individual file processing...")
+            indexed_count = 0
+            error_count = 0
+            
+            for i, (content, file_path) in enumerate(zip(contents, file_paths), 1):
+                try:
+                    await self.rag.ainsert(content, file_paths=file_path)
+                    indexed_count += 1
+                    if i % 10 == 0:
+                        print(f"   ✓ Processed {i}/{len(contents)} files...")
+                except Exception as e:
+                    print(f"   ✗ Error indexing {file_path}: {e}")
+                    error_count += 1
         
         print("\n" + "=" * 80)
         print("INDEXING COMPLETE")

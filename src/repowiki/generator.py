@@ -12,9 +12,10 @@ from .prompts import get_wiki_structure, get_category_index_prompt
 class WikiGenerator:
     """Generates hierarchical wiki documentation from knowledge graph"""
     
-    def __init__(self, config: Optional[Config] = None):
+    def __init__(self, config: Optional[Config] = None, extended: bool = False):
         self.config = config or Config()
         self.config.validate()
+        self.extended = extended
         
         # Add LightRAG to path
         sys.path.insert(0, str(self.config.lightrag_repo))
@@ -24,12 +25,21 @@ class WikiGenerator:
         
         # Import LightRAG
         from lightrag import LightRAG, QueryParam
-        from lightrag.llm import openai_complete_if_cache, openai_embedding
+        from lightrag.llm.llama_index_impl import (
+            llama_index_complete_if_cache,
+            llama_index_embed,
+        )
+        from lightrag.utils import EmbeddingFunc
+        from llama_index.llms.litellm import LiteLLM
+        from llama_index.embeddings.litellm import LiteLLMEmbedding
         
+        self.EmbeddingFunc = EmbeddingFunc
         self.LightRAG = LightRAG
         self.QueryParam = QueryParam
-        self.llm_func = openai_complete_if_cache
-        self.embedding_func = openai_embedding
+        self.llama_index_complete_if_cache = llama_index_complete_if_cache
+        self.llama_index_embed = llama_index_embed
+        self.LiteLLM = LiteLLM
+        self.LiteLLMEmbedding = LiteLLMEmbedding
         
         print(f"🤖 Using GitHub Copilot models (like lightrag_openspec)")
         print(f"   LLM: {self.config.llm_model_name}")
@@ -37,16 +47,44 @@ class WikiGenerator:
         self.rag = None
         self.generated_pages = []
     
-    def initialize_rag(self):
+    async def _create_llm_func(self, prompt, system_prompt=None, history_messages=[], **kwargs):
+        """Create LLM function using LiteLLM."""
+        if "llm_instance" not in kwargs:
+            kwargs["llm_instance"] = self.LiteLLM(
+                model=self.config.llm_model_name,
+                api_key=self.config.api_key,
+                temperature=0.7,
+            )
+        return await self.llama_index_complete_if_cache(
+            kwargs["llm_instance"], prompt, system_prompt, history_messages
+        )
+    
+    async def _create_embedding_func(self, texts):
+        """Create embedding function using LiteLLM."""
+        embed_model = self.LiteLLMEmbedding(
+            model_name=self.config.embedding_model_name,
+            api_key=self.config.api_key,
+        )
+        return await self.llama_index_embed(texts, embed_model=embed_model)
+    
+    async def initialize_rag(self):
         """Initialize LightRAG instance"""
+        # Wrap embedding function with EmbeddingFunc
+        embedding_func_wrapped = self.EmbeddingFunc(
+            embedding_dim=1536,  # text-embedding-3-small dimension
+            max_token_size=8192,
+            func=self._create_embedding_func,
+        )
+        
         self.rag = self.LightRAG(
             working_dir=str(self.config.working_dir),
             workspace=self.config.workspace,
-            llm_model_func=self.llm_func,
-            embedding_func=self.embedding_func,
+            llm_model_func=self._create_llm_func,
+            embedding_func=embedding_func_wrapped,
             llm_model_name=self.config.llm_model_name,
-            embedding_model_name=self.config.embedding_model_name,
         )
+        # Initialize storages
+        await self.rag.initialize_storages()
         return self.rag
     
     async def generate_page(
@@ -117,17 +155,26 @@ class WikiGenerator:
                     f"# {category_info['title']}\n\n{content}"
                 )
         
-        # Generate pages
+        # Generate pages in parallel
         if "pages" in category_info:
+            # Create all page generation tasks
+            page_tasks = []
             for page in category_info["pages"]:
                 breadcrumb = f"Home > {category_info['title']} > {page.title}"
-                title, content = await self.generate_page(
+                task = self.generate_page(
                     page.title,
                     page.prompt,
                     mode=page.mode,
                     top_k=page.top_k,
                     breadcrumb=breadcrumb
                 )
+                page_tasks.append((page, task))
+            
+            # Execute all pages in parallel
+            results = await asyncio.gather(*[task for _, task in page_tasks])
+            
+            # Write results
+            for (page, _), (title, content) in zip(page_tasks, results):
                 if content:
                     filepath = category_path / f"{page.name}.md"
                     self.write_file(
@@ -176,18 +223,21 @@ This wiki was automatically generated from the codebase using LightRAG's knowled
     async def generate_all(self):
         """Generate entire hierarchical wiki"""
         print("\n" + "="*80)
-        print("🏗️  GENERATING HIERARCHICAL WIKI")
+        print("🏗️  GENERATING HIERARCHICAL WIKI (PARALLEL MODE)")
         print("="*80 + "\n")
         
         # Initialize RAG
-        self.initialize_rag()
+        await self.initialize_rag()
         
         # Get wiki structure
-        structure = get_wiki_structure()
+        structure = get_wiki_structure(extended=self.extended)
         
-        # Generate each category
-        for category_id, category_info in structure.items():
-            await self.generate_category(category_id, category_info)
+        # Generate all categories in parallel
+        category_tasks = [
+            self.generate_category(category_id, category_info)
+            for category_id, category_info in structure.items()
+        ]
+        await asyncio.gather(*category_tasks)
         
         # Generate root index
         await self.generate_root_index(structure)

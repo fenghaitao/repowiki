@@ -21,30 +21,32 @@ async def run_index(config: Config):
     return indexed > 0
 
 
-async def run_generate(config: Config):
+async def run_generate(config: Config, extended: bool = False):
     """Run the wiki generation step"""
     print("\n" + "=" * 80)
-    print("STEP 2: GENERATING WIKI")
+    mode_str = "EXTENDED " if extended else ""
+    print(f"STEP 2: GENERATING {mode_str}WIKI")
     print("=" * 80)
     
-    generator = WikiGenerator(config)
+    generator = WikiGenerator(config, extended=extended)
     await generator.generate_all()
     
     return True
 
 
-async def run_all(config: Config):
+async def run_all(config: Config, extended: bool = False):
     """Run both indexing and generation"""
     print("\n" + "=" * 80)
     print("🚀 LIGHTRAG REPOSITORY WIKI GENERATION")
     print("=" * 80)
-    print("""
+    mode_str = "extended " if extended else ""
+    print(f"""
 This will:
 1. Index the LightRAG repository into a knowledge graph
-2. Generate hierarchical wiki documentation
+2. Generate {mode_str}hierarchical wiki documentation
 
-Estimated time: 30-60 minutes
-Estimated cost: $10-20 in LLM API calls
+Estimated time: {'60-90' if extended else '30-60'} minutes
+Estimated cost: {'$20-40' if extended else '$10-20'} in LLM API calls
 """)
     
     response = input("\nProceed? (yes/no): ").strip().lower()
@@ -62,7 +64,7 @@ Estimated cost: $10-20 in LLM API calls
     await asyncio.sleep(2)
     
     # Step 2: Generate
-    success = await run_generate(config)
+    success = await run_generate(config, extended=extended)
     if not success:
         print("❌ Wiki generation failed")
         return False
@@ -202,6 +204,16 @@ def main():
         type=Path,
         help="Output directory for wiki"
     )
+    gen_parser.add_argument(
+        "--extended",
+        action="store_true",
+        help="Generate extended wiki with comprehensive documentation"
+    )
+    gen_parser.add_argument(
+        "--model",
+        type=str,
+        help="LLM model to use (e.g., gpt-4o, gpt-4o-mini)"
+    )
     
     # All command
     all_parser = subparsers.add_parser("all", help="Run index and generate")
@@ -209,6 +221,16 @@ def main():
         "--repo",
         type=Path,
         help="Path to LightRAG repository"
+    )
+    all_parser.add_argument(
+        "--extended",
+        action="store_true",
+        help="Generate extended wiki with comprehensive documentation"
+    )
+    all_parser.add_argument(
+        "--model",
+        type=str,
+        help="LLM model to use (e.g., gpt-4o, gpt-4o-mini)"
     )
     
     # Test command
@@ -229,16 +251,21 @@ def main():
         config_kwargs['working_dir'] = args.working_dir
     if hasattr(args, 'output') and args.output:
         config_kwargs['output_dir'] = args.output
+    if hasattr(args, 'model') and args.model:
+        config_kwargs['llm_model_name'] = args.model
     
     config = Config.from_env(**config_kwargs)
+    
+    # Get extended flag
+    extended = getattr(args, 'extended', False)
     
     # Run command
     if args.command == "index":
         asyncio.run(run_index(config))
     elif args.command == "generate":
-        asyncio.run(run_generate(config))
+        asyncio.run(run_generate(config, extended=extended))
     elif args.command == "all":
-        asyncio.run(run_all(config))
+        asyncio.run(run_all(config, extended=extended))
     elif args.command == "test":
         success = test_setup(config)
         sys.exit(0 if success else 1)

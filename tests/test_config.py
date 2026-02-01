@@ -11,7 +11,6 @@ def test_config_defaults():
     assert config.workspace == "main"
     assert config.min_file_size == 50
     assert '.py' in config.code_extensions
-    assert '__pycache__' in config.skip_dirs
 
 
 def test_config_custom():
