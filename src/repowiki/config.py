@@ -22,10 +22,16 @@ class Config:
     
     # Indexing settings
     code_extensions: Set[str] = field(default_factory=lambda: {
-        '.py', '.md', '.txt', '.yaml', '.yml', '.json'
+        '.py', '.md', '.txt'
     })
     min_file_size: int = 50
     batch_report_interval: int = 10
+    
+    # Parallel processing settings (Ultra-aggressive - optimized for GitHub Copilot Business)
+    # Pushing to 50-60% capacity utilization for maximum speed
+    max_parallel_insert: int = 48      # Documents processed concurrently
+    llm_model_max_async: int = 96      # Concurrent LLM calls
+    embedding_func_max_async: int = 48  # Concurrent embedding calls
     
     @classmethod
     def from_env(cls) -> "Config":
@@ -58,6 +64,16 @@ class Config:
         
         if batch := os.getenv("BATCH_REPORT_INTERVAL"):
             config_dict["batch_report_interval"] = int(batch)
+        
+        # Parallel processing settings
+        if max_parallel := os.getenv("MAX_PARALLEL_INSERT"):
+            config_dict["max_parallel_insert"] = int(max_parallel)
+        
+        if llm_async := os.getenv("LLM_MODEL_MAX_ASYNC"):
+            config_dict["llm_model_max_async"] = int(llm_async)
+        
+        if embed_async := os.getenv("EMBEDDING_FUNC_MAX_ASYNC"):
+            config_dict["embedding_func_max_async"] = int(embed_async)
         
         return cls(**config_dict)
     

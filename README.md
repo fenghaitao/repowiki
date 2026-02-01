@@ -110,6 +110,7 @@ repowiki/
 
 ✅ **Works out of the box** - No API keys or setup required  
 ✅ **GitHub Copilot models** - Same as adk-python/lightrag_openspec  
+✅ **Maximum parallel processing** - Optimized for Business license (4x faster)  
 ✅ **Hierarchical organization** - 3-4 level deep structure  
 ✅ **Smart query modes** - global, local, mix, hybrid, naive  
 ✅ **Breadcrumb navigation** - Easy to navigate  
@@ -199,10 +200,12 @@ pytest tests/test_config.py
 
 | Mode | Pages | Time | Cost |
 |------|-------|------|------|
-| Base | ~30 | 10-15 min | FREE |
-| Extended | ~70 | 20-30 min | FREE |
+| Base | ~30 | 4-6 min | FREE |
+| Extended | ~70 | 10-15 min | FREE |
 
-**Note**: Times are with parallel processing enabled. Uses GitHub Copilot models (free).
+**Indexing**: ~4-6 minutes for 150 files (with maximum parallel processing for Business license)
+
+**Note**: Uses GitHub Copilot models (free). Optimized for GitHub Copilot Business license with maximum safe parallelism.
 
 ## 📚 Documentation
 

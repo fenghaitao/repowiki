@@ -79,10 +79,10 @@ class RepositoryIndexer:
             llm_model_func=self._create_llm_func,
             embedding_func=embedding_func_wrapped,
             llm_model_name=self.config.llm_model_name,
-            # Parallel processing configuration (conservative for stability)
-            max_parallel_insert=8,   # Process 8 documents concurrently
-            llm_model_max_async=16,  # 16 concurrent LLM calls
-            embedding_func_max_async=8,   # 8 concurrent embedding calls
+            # Parallel processing configuration (configurable)
+            max_parallel_insert=self.config.max_parallel_insert,
+            llm_model_max_async=self.config.llm_model_max_async,
+            embedding_func_max_async=self.config.embedding_func_max_async,
         )
         # Initialize storages (required for JsonDocStatusStorage)
         await self.rag.initialize_storages()
