@@ -1,0 +1,2246 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d13" for="edge" attr.name="truncate" attr.type="string" />
+  <key id="d12" for="edge" attr.name="created_at" attr.type="long" />
+  <key id="d11" for="edge" attr.name="file_path" attr.type="string" />
+  <key id="d10" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d9" for="edge" attr.name="keywords" attr.type="string" />
+  <key id="d8" for="edge" attr.name="description" attr.type="string" />
+  <key id="d7" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d6" for="node" attr.name="truncate" attr.type="string" />
+  <key id="d5" for="node" attr.name="created_at" attr.type="long" />
+  <key id="d4" for="node" attr.name="file_path" attr.type="string" />
+  <key id="d3" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d2" for="node" attr.name="description" attr.type="string" />
+  <key id="d1" for="node" attr.name="entity_type" attr.type="string" />
+  <key id="d0" for="node" attr.name="entity_id" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="Repowiki">
+      <data key="d0">Repowiki</data>
+      <data key="d1">software</data>
+      <data key="d2">Repowiki is a hierarchical wiki generator designed to create comprehensive documentation for code repositories using LightRAG knowledge graphs.&lt;SEP&gt;Repowiki is a command-line interface tool designed for indexing repositories and generating wiki documentation.&lt;SEP&gt;Repowiki is a tool for managing and processing repositories, utilizing advanced models and indexing techniques for efficient operation.</data>
+      <data key="d3">chunk-93dd1e0de61f2c0ae716ae42d9736be0&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d&lt;SEP&gt;chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">__init__.py&lt;SEP&gt;cli.py&lt;SEP&gt;config.py</data>
+      <data key="d5">1770036492</data>
+      <data key="d6" />
+    </node>
+    <node id="Code Repositories">
+      <data key="d0">Code Repositories</data>
+      <data key="d1">data</data>
+      <data key="d2">Code repositories are collections of source code that are used as input for generating hierarchical wiki documentation with Repowiki.</data>
+      <data key="d3">chunk-93dd1e0de61f2c0ae716ae42d9736be0</data>
+      <data key="d4">__init__.py</data>
+      <data key="d5">1770036346</data>
+      <data key="d6" />
+    </node>
+    <node id="LightRAG Knowledge Graphs">
+      <data key="d0">LightRAG Knowledge Graphs</data>
+      <data key="d1">method</data>
+      <data key="d2">LightRAG knowledge graphs are a method used by Repowiki to generate hierarchical wiki documentation.</data>
+      <data key="d3">chunk-93dd1e0de61f2c0ae716ae42d9736be0</data>
+      <data key="d4">__init__.py</data>
+      <data key="d5">1770036346</data>
+      <data key="d6" />
+    </node>
+    <node id="GitHub Copilot Models">
+      <data key="d0">GitHub Copilot Models</data>
+      <data key="d1">artifact</data>
+      <data key="d2">GitHub Copilot models are AI-based coding tools that Repowiki uses to function, specifically the models associated with adk-python/lightrag_openspec.&lt;SEP&gt;GitHub Copilot Models are AI-based models used for assisting with code completion and other tasks.</data>
+      <data key="d3">chunk-93dd1e0de61f2c0ae716ae42d9736be0&lt;SEP&gt;chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d4">__init__.py&lt;SEP&gt;indexer.py</data>
+      <data key="d5">1770036402</data>
+      <data key="d6" />
+    </node>
+    <node id="LightRAG Contributors">
+      <data key="d0">LightRAG Contributors</data>
+      <data key="d1">organization</data>
+      <data key="d2">LightRAG Contributors are the creators and maintainers of Repowiki.</data>
+      <data key="d3">chunk-93dd1e0de61f2c0ae716ae42d9736be0</data>
+      <data key="d4">__init__.py</data>
+      <data key="d5">1770036352</data>
+      <data key="d6" />
+    </node>
+    <node id="Config">
+      <data key="d0">Config</data>
+      <data key="d1">class</data>
+      <data key="d2">Config is a versatile and integral component within the Repowiki ecosystem, designed to manage, validate, and store configuration settings across various processes. It is implemented as a Python class, often structured as a dataclass, and is primarily responsible for handling a wide range of parameters essential for the operation of tools such as the Repository Indexer and the WikiGenerator.
+
+One of Config's key roles is to manage environment variables and configuration settings, ensuring that the system operates seamlessly by loading and validating parameters such as API keys, model names, working directories, and paths. It is critical in initializing and maintaining settings for indexing processes, documentation generation, and other workflows within Repowiki. Config also encompasses features for handling specific parameters related to large language models (LLMs), indexing operations, and parallel processing, ensuring efficient and scalable system performance.
+
+Additionally, Config serves as the backbone for validating repository-specific settings and ensuring that all parameters are correctly configured before execution. Its functionality spans the management of environment-based configurations, dynamic loading of settings, and integration of model and indexing parameters, making it a central utility for Repowiki's modular architecture. This adaptability allows Config to be used across different components to support tasks such as generating documentation and managing repository indexing with precision and consistency.</data>
+      <data key="d3">chunk-93dd1e0de61f2c0ae716ae42d9736be0&lt;SEP&gt;chunk-1fe06528eced4a8ddb1d68ac9207ea3d&lt;SEP&gt;chunk-ae4970d4ebd84293eb94fe47b1dcaf8d&lt;SEP&gt;chunk-33a0ff4a990b22038a7cd28d988c82a8&lt;SEP&gt;chunk-28bffece40cc95dd556f4f60299794a9&lt;SEP&gt;chunk-562808b51a9654820bb85ba8ea7e6766&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d&lt;SEP&gt;chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">__init__.py&lt;SEP&gt;indexer.py&lt;SEP&gt;generator.py&lt;SEP&gt;cli.py&lt;SEP&gt;config.py</data>
+      <data key="d5">1770036503</data>
+      <data key="d6" />
+    </node>
+    <node id="RepositoryIndexer">
+      <data key="d0">RepositoryIndexer</data>
+      <data key="d1">method</data>
+      <data key="d2">RepositoryIndexer is a module in Repowiki responsible for indexing code repositories.&lt;SEP&gt;RepositoryIndexer is a method used to index a repository through parallel batch processing.&lt;SEP&gt;RepositoryIndexer is a method or class responsible for indexing the contents of a repository into a structured knowledge graph.</data>
+      <data key="d3">chunk-93dd1e0de61f2c0ae716ae42d9736be0&lt;SEP&gt;chunk-ae4970d4ebd84293eb94fe47b1dcaf8d&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">__init__.py&lt;SEP&gt;indexer.py&lt;SEP&gt;cli.py</data>
+      <data key="d5">1770036466</data>
+      <data key="d6" />
+    </node>
+    <node id="WikiGenerator">
+      <data key="d0">WikiGenerator</data>
+      <data key="d1">method</data>
+      <data key="d2">WikiGenerator is a module in Repowiki used for generating hierarchical wiki documentation.&lt;SEP&gt;WikiGenerator is a tool for generating a hierarchical wiki structure, leveraging LightRAG and GitHub Copilot.&lt;SEP&gt;WikiGenerator is a Python class designed to generate hierarchical wiki documentation from a knowledge graph.&lt;SEP&gt;WikiGenerator is a method or class used to generate hierarchical wiki documentation based on indexed repository data.</data>
+      <data key="d3">chunk-93dd1e0de61f2c0ae716ae42d9736be0&lt;SEP&gt;chunk-33a0ff4a990b22038a7cd28d988c82a8&lt;SEP&gt;chunk-28bffece40cc95dd556f4f60299794a9&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">__init__.py&lt;SEP&gt;generator.py&lt;SEP&gt;cli.py</data>
+      <data key="d5">1770036466</data>
+      <data key="d6" />
+    </node>
+    <node id="adk-python/lightrag_openspec">
+      <data key="d0">adk-python/lightrag_openspec</data>
+      <data key="d1">artifact</data>
+      <data key="d2">adk-python/lightrag_openspec is a specific implementation of GitHub Copilot models referenced in Repowiki for its default operations.</data>
+      <data key="d3">chunk-93dd1e0de61f2c0ae716ae42d9736be0</data>
+      <data key="d4">__init__.py</data>
+      <data key="d5">1770036355</data>
+      <data key="d6" />
+    </node>
+    <node id="Prompts.py">
+      <data key="d0">Prompts.py</data>
+      <data key="d1">artifact</data>
+      <data key="d2">Prompts.py is a Python file containing prompt templates designed for wiki generation, focusing on structured documentation and specific use cases.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036364</data>
+      <data key="d6" />
+    </node>
+    <node id="Wiki Generation Prompts">
+      <data key="d0">Wiki Generation Prompts</data>
+      <data key="d1">content</data>
+      <data key="d2">Wiki Generation Prompts are structured templates aimed at generating documentation for codebases, highlighting architecture, design decisions, and workflows.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036364</data>
+      <data key="d6" />
+    </node>
+    <node id="PageDefinition">
+      <data key="d0">PageDefinition</data>
+      <data key="d1">concept</data>
+      <data key="d2">PageDefinition is a method used to define and configure individual pages within the documentation, including their names, titles, modes, and prompts.&lt;SEP&gt;PageDefinition is a data structure representing the definition of a wiki page, including attributes such as name, title, mode, top_k, and prompt.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c&lt;SEP&gt;chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036364</data>
+      <data key="d6" />
+    </node>
+    <node id="Overview And Architecture">
+      <data key="d0">Overview And Architecture</data>
+      <data key="d1">content</data>
+      <data key="d2">Overview And Architecture is a section in the wiki structure that includes pages such as "Project Overview," "Architecture," and "Design Decisions" for codebase documentation.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036365</data>
+      <data key="d6" />
+    </node>
+    <node id="Project Overview">
+      <data key="d0">Project Overview</data>
+      <data key="d1">content</data>
+      <data key="d2">Project Overview is a page that provides a comprehensive summary of a project, including its purpose, features, use cases, audience, and architecture.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036366</data>
+      <data key="d6" />
+    </node>
+    <node id="Architecture">
+      <data key="d0">Architecture</data>
+      <data key="d1">content</data>
+      <data key="d2">Architecture is a page that analyzes the codebase's architectural pattern, core components, and data flow to provide clarity for developers.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036366</data>
+      <data key="d6" />
+    </node>
+    <node id="Design Decisions">
+      <data key="d0">Design Decisions</data>
+      <data key="d1">content</data>
+      <data key="d2">Design Decisions is a page that explains the key abstractions, design principles, and domain-specific terminology of a codebase.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036367</data>
+      <data key="d6" />
+    </node>
+    <node id="Getting Started">
+      <data key="d0">Getting Started</data>
+      <data key="d1">content</data>
+      <data key="d2">Getting Started is a section in the extended wiki structure that includes pages for guiding new users on installation, configuration, and basic usage of a project.&lt;SEP&gt;Getting Started is a quick-start guide section in the wiki aimed at helping users begin using the documentation or tool.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c&lt;SEP&gt;chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d4">prompts.py&lt;SEP&gt;generator.py</data>
+      <data key="d5">1770036423</data>
+      <data key="d6" />
+    </node>
+    <node id="Installation">
+      <data key="d0">Installation</data>
+      <data key="d1">content</data>
+      <data key="d2">Installation is a page that provides guidance on prerequisites, installation steps, environment setup, and initial usage of a project.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036374</data>
+      <data key="d6" />
+    </node>
+    <node id="Configuration Guide">
+      <data key="d0">Configuration Guide</data>
+      <data key="d1">content</data>
+      <data key="d2">Configuration Guide is a page that documents configuration options, environment variables, and advanced tuning for a project.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036374</data>
+      <data key="d6" />
+    </node>
+    <node id="Core Concepts">
+      <data key="d0">Core Concepts</data>
+      <data key="d1">content</data>
+      <data key="d2">Core Concepts is a section in the extended wiki structure that includes pages like "Key Components," "Project Structure," and "Common Workflows" to help developers understand the codebase.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036374</data>
+      <data key="d6" />
+    </node>
+    <node id="Key Components">
+      <data key="d0">Key Components</data>
+      <data key="d1">content</data>
+      <data key="d2">Key Components is a page that identifies and describes the most important components or modules in the codebase, including their responsibilities and dependencies.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036374</data>
+      <data key="d6" />
+    </node>
+    <node id="Project Structure">
+      <data key="d0">Project Structure</data>
+      <data key="d1">content</data>
+      <data key="d2">Project Structure is a page that explains the directory and package organization of the codebase to aid developer navigation.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036378</data>
+      <data key="d6" />
+    </node>
+    <node id="Common Workflows">
+      <data key="d0">Common Workflows</data>
+      <data key="d1">content</data>
+      <data key="d2">Common Workflows is a page that describes step-by-step processes for executing core functionalities within the codebase.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036378</data>
+      <data key="d6" />
+    </node>
+    <node id="API Reference">
+      <data key="d0">API Reference</data>
+      <data key="d1">content</data>
+      <data key="d2">API Reference is a section in the extended wiki structure that includes pages like "Public API" to document the main interfaces and methods of the codebase.&lt;SEP&gt;API Reference is a section of the wiki that provides technical details and documentation for the available APIs.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c&lt;SEP&gt;chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d4">prompts.py&lt;SEP&gt;generator.py</data>
+      <data key="d5">1770036423</data>
+      <data key="d6" />
+    </node>
+    <node id="Public API">
+      <data key="d0">Public API</data>
+      <data key="d1">content</data>
+      <data key="d2">Public API is a documentation page designed to describe the main public APIs of a codebase, focusing on their names, purposes, methods, parameters, return types, and usage examples.&lt;SEP&gt;Public API is a page that documents the main APIs of the codebase, including their purpose, methods, parameters, return types, and usage examples.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c&lt;SEP&gt;chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036379</data>
+      <data key="d6" />
+    </node>
+    <node id="Dependencies">
+      <data key="d0">Dependencies</data>
+      <data key="d1">content</data>
+      <data key="d2">Dependencies is a page within the Development Guide that analyzes the codebase's external dependencies, system requirements, and platform compatibility.&lt;SEP&gt;Dependencies is a practical section in the wiki prompts that focuses on the requirements needed for the project to function correctly.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c&lt;SEP&gt;chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036380</data>
+      <data key="d6" />
+    </node>
+    <node id="Testing">
+      <data key="d0">Testing</data>
+      <data key="d1">content</data>
+      <data key="d2">Testing is a practical section in the wiki prompts that verifies the functionality and reliability of the project.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036380</data>
+      <data key="d6" />
+    </node>
+    <node id="Extension Points">
+      <data key="d0">Extension Points</data>
+      <data key="d1">content</data>
+      <data key="d2">Extension Points is a page within the Development Guide that outlines how to extend or customize the codebase, including plugin mechanisms and best practices.&lt;SEP&gt;Extension Points is a practical section in the wiki prompts that highlights areas where the project can be extended or customized.</data>
+      <data key="d3">chunk-e4664182ce184ecb54cc8e0de51ade1c&lt;SEP&gt;chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036381</data>
+      <data key="d6" />
+    </node>
+    <node id="Code Examples">
+      <data key="d0">Code Examples</data>
+      <data key="d1">content</data>
+      <data key="d2">Code Examples is a documentation page that provides practical code snippets demonstrating the use of the codebase for common real-world scenarios.</data>
+      <data key="d3">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036382</data>
+      <data key="d6" />
+    </node>
+    <node id="Development Guide">
+      <data key="d0">Development Guide</data>
+      <data key="d1">content</data>
+      <data key="d2">Development Guide is a section of the documentation that includes pages to assist developers, such as dependencies, testing guides, and extension points.</data>
+      <data key="d3">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036383</data>
+      <data key="d6" />
+    </node>
+    <node id="Testing Guide">
+      <data key="d0">Testing Guide</data>
+      <data key="d1">content</data>
+      <data key="d2">Testing Guide is a page within the Development Guide that explains the testing approach, including types of tests, frameworks, and instructions for running and writing tests.</data>
+      <data key="d3">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036385</data>
+      <data key="d6" />
+    </node>
+    <node id="Category Index Prompt">
+      <data key="d0">Category Index Prompt</data>
+      <data key="d1">method</data>
+      <data key="d2">Category Index Prompt is a method for generating an index page for a specific section of the documentation, including an overview, table of contents, and learning path.</data>
+      <data key="d3">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d4">prompts.py</data>
+      <data key="d5">1770036386</data>
+      <data key="d6" />
+    </node>
+    <node id="Repository Indexer">
+      <data key="d0">Repository Indexer</data>
+      <data key="d1">method</data>
+      <data key="d2">Repository Indexer is a Python class that indexes a code repository into a LightRAG knowledge graph.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036386</data>
+      <data key="d6" />
+    </node>
+    <node id="LightRAG">
+      <data key="d0">LightRAG</data>
+      <data key="d1">method</data>
+      <data key="d2">LightRAG is a method facilitating batch insertions with automatic parallelization during repository indexing.&lt;SEP&gt;LightRAG is a framework used for building knowledge graphs, supporting LLM functions and embeddings.&lt;SEP&gt;LightRAG is a library used within the WikiGenerator class to manage embeddings, queries, and language model operations.&lt;SEP&gt;LightRAG is a knowledge graph generation method used to automatically create documentation from a codebase.&lt;SEP&gt;LightRAG is a Python module that is optionally imported and used in the repowiki setup for certain functionalities.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d&lt;SEP&gt;chunk-ae4970d4ebd84293eb94fe47b1dcaf8d&lt;SEP&gt;chunk-33a0ff4a990b22038a7cd28d988c82a8&lt;SEP&gt;chunk-28bffece40cc95dd556f4f60299794a9&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">indexer.py&lt;SEP&gt;generator.py&lt;SEP&gt;cli.py</data>
+      <data key="d5">1770036470</data>
+      <data key="d6" />
+    </node>
+    <node id="LiteLLM">
+      <data key="d0">LiteLLM</data>
+      <data key="d1">library</data>
+      <data key="d2">LiteLLM is a class representing a lightweight language model implementation used in the Repository Indexer.&lt;SEP&gt;LiteLLM is a library integrated into WikiGenerator for utilizing language models, specifically for generating text based on prompts.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d&lt;SEP&gt;chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d4">indexer.py&lt;SEP&gt;generator.py</data>
+      <data key="d5">1770036424</data>
+      <data key="d6" />
+    </node>
+    <node id="LiteLLMEmbedding">
+      <data key="d0">LiteLLMEmbedding</data>
+      <data key="d1">library</data>
+      <data key="d2">LiteLLMEmbedding is a class for generating embeddings using the LiteLLM model, utilized in the indexing process.&lt;SEP&gt;LiteLLMEmbedding is a library used in WikiGenerator for creating embeddings from text inputs using a specified language model.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d&lt;SEP&gt;chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d4">indexer.py&lt;SEP&gt;generator.py</data>
+      <data key="d5">1770036424</data>
+      <data key="d6" />
+    </node>
+    <node id="EmbeddingFunc">
+      <data key="d0">EmbeddingFunc</data>
+      <data key="d1">class</data>
+      <data key="d2">EmbeddingFunc is a utility class in the LightRAG framework for wrapping embedding functions with specific dimensions and configurations.&lt;SEP&gt;EmbeddingFunc is a class used in the WikiGenerator to wrap embedding functions, defining parameters such as embedding dimension and token size.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d&lt;SEP&gt;chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d4">indexer.py&lt;SEP&gt;generator.py</data>
+      <data key="d5">1770036425</data>
+      <data key="d6" />
+    </node>
+    <node id="JsonDocStatusStorage">
+      <data key="d0">JsonDocStatusStorage</data>
+      <data key="d1">component</data>
+      <data key="d2">JsonDocStatusStorage is a storage component required for the Repository Indexer's operation within LightRAG.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036390</data>
+      <data key="d6" />
+    </node>
+    <node id="Path">
+      <data key="d0">Path</data>
+      <data key="d1">class</data>
+      <data key="d2">Path is a Python library class from pathlib used to handle filesystem paths.&lt;SEP&gt;Path is a Python module used for working with filesystem paths in the repowiki script.&lt;SEP&gt;Path is a data type used to represent and manipulate file system paths in the code.&lt;SEP&gt;Path is a class from Python's pathlib module used to handle filesystem paths in a platform-independent manner.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d&lt;SEP&gt;chunk-562808b51a9654820bb85ba8ea7e6766&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d&lt;SEP&gt;chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">indexer.py&lt;SEP&gt;cli.py&lt;SEP&gt;config.py</data>
+      <data key="d5">1770036492</data>
+      <data key="d6" />
+    </node>
+    <node id="asyncio">
+      <data key="d0">asyncio</data>
+      <data key="d1">module</data>
+      <data key="d2">asyncio is a Python module enabling asynchronous programming and concurrency in the Repository Indexer.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036392</data>
+      <data key="d6" />
+    </node>
+    <node id="Repository">
+      <data key="d0">Repository</data>
+      <data key="d1">concept</data>
+      <data key="d2">The repository is the collection of files being indexed through the batch processing method.&lt;SEP&gt;Repository refers to a codebase that the Repository Indexer processes and indexes into a knowledge graph.&lt;SEP&gt;The Repository is a collection of code and documentation files that are indexed and documented using repowiki.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d&lt;SEP&gt;chunk-ae4970d4ebd84293eb94fe47b1dcaf8d&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">indexer.py&lt;SEP&gt;cli.py</data>
+      <data key="d5">1770036471</data>
+      <data key="d6" />
+    </node>
+    <node id="Files">
+      <data key="d0">Files</data>
+      <data key="d1">data</data>
+      <data key="d2">Files are individual code or documentation files collected from the repository for indexing.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036393</data>
+      <data key="d6" />
+    </node>
+    <node id="llama_index_complete_if_cache">
+      <data key="d0">llama_index_complete_if_cache</data>
+      <data key="d1">function</data>
+      <data key="d2">llama_index_complete_if_cache is a function from LightRAG that handles LLM-related completions with caching support.&lt;SEP&gt;llama_index_complete_if_cache is a function imported from the LightRAG library, used to complete queries with caching mechanisms.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d&lt;SEP&gt;chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d4">indexer.py&lt;SEP&gt;generator.py</data>
+      <data key="d5">1770036426</data>
+      <data key="d6" />
+    </node>
+    <node id="llama_index_embed">
+      <data key="d0">llama_index_embed</data>
+      <data key="d1">function</data>
+      <data key="d2">llama_index_embed is a function from LightRAG that generates embeddings for texts using a specified model.&lt;SEP&gt;llama_index_embed is a function from the LightRAG library used for generating text embeddings within the WikiGenerator.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d&lt;SEP&gt;chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d4">indexer.py&lt;SEP&gt;generator.py</data>
+      <data key="d5">1770036426</data>
+      <data key="d6" />
+    </node>
+    <node id="Python">
+      <data key="d0">Python</data>
+      <data key="d1">concept</data>
+      <data key="d2">Python is the programming language used to implement the Repository Indexer and its associated components.&lt;SEP&gt;Python is the programming language used to write and execute the repowiki tool.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">indexer.py&lt;SEP&gt;cli.py</data>
+      <data key="d5">1770036470</data>
+      <data key="d6" />
+    </node>
+    <node id="lightrag.utils">
+      <data key="d0">lightrag.utils</data>
+      <data key="d1">module</data>
+      <data key="d2">lightrag.utils is a module in the LightRAG framework that provides utility functions, including the EmbeddingFunc class.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036395</data>
+      <data key="d6" />
+    </node>
+    <node id="lightrag.llm.llama_index_impl">
+      <data key="d0">lightrag.llm.llama_index_impl</data>
+      <data key="d1">module</data>
+      <data key="d2">lightrag.llm.llama_index_impl is a module in the LightRAG framework that includes functions such as llama_index_complete_if_cache and llama_index_embed for LLM and embedding operations.</data>
+      <data key="d3">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036396</data>
+      <data key="d6" />
+    </node>
+    <node id="File Contents">
+      <data key="d0">File Contents</data>
+      <data key="d1">data</data>
+      <data key="d2">File contents refer to the data read from files during the repository indexing process.</data>
+      <data key="d3">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036397</data>
+      <data key="d6" />
+    </node>
+    <node id="Working Directory">
+      <data key="d0">Working Directory</data>
+      <data key="d1">concept</data>
+      <data key="d2">The working directory is the storage location where indexed files and configurations are managed.&lt;SEP&gt;The Working Directory is a file path used by repowiki for intermediate operations such as writing test files during setup.</data>
+      <data key="d3">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">indexer.py&lt;SEP&gt;cli.py</data>
+      <data key="d5">1770036477</data>
+      <data key="d6" />
+    </node>
+    <node id="Parallel Batch Processing">
+      <data key="d0">Parallel Batch Processing</data>
+      <data key="d1">method</data>
+      <data key="d2">Parallel batch processing is a method used to handle multiple files concurrently for efficient indexing.</data>
+      <data key="d3">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036399</data>
+      <data key="d6" />
+    </node>
+    <node id="Indexing Process">
+      <data key="d0">Indexing Process</data>
+      <data key="d1">concept</data>
+      <data key="d2">The indexing process refers to the systematic organization and storage of repository files for retrieval.</data>
+      <data key="d3">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036400</data>
+      <data key="d6" />
+    </node>
+    <node id="Error Handling">
+      <data key="d0">Error Handling</data>
+      <data key="d1">concept</data>
+      <data key="d2">Error handling refers to the mechanisms in place to manage and recover from errors during the indexing process.</data>
+      <data key="d3">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036401</data>
+      <data key="d6" />
+    </node>
+    <node id="Asyncio">
+      <data key="d0">Asyncio</data>
+      <data key="d1">method</data>
+      <data key="d2">Asyncio is a Python library used for writing asynchronous programs and is employed to manage concurrent tasks during the indexing process.&lt;SEP&gt;Asyncio is used to execute asynchronous tasks like indexing and generating wikis in the code.</data>
+      <data key="d3">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d&lt;SEP&gt;chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d4">indexer.py&lt;SEP&gt;cli.py</data>
+      <data key="d5">1770036458</data>
+      <data key="d6" />
+    </node>
+    <node id="Max Parallel Insert">
+      <data key="d0">Max Parallel Insert</data>
+      <data key="d1">concept</data>
+      <data key="d2">Max Parallel Insert refers to the maximum number of documents that can be processed concurrently during parallel batch processing.</data>
+      <data key="d3">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036402</data>
+      <data key="d6" />
+    </node>
+    <node id="Skipped Files">
+      <data key="d0">Skipped Files</data>
+      <data key="d1">data</data>
+      <data key="d2">Skipped files refer to the files that were not processed due to being too small or encountering errors during the indexing process.</data>
+      <data key="d3">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036403</data>
+      <data key="d6" />
+    </node>
+    <node id="Error Count">
+      <data key="d0">Error Count</data>
+      <data key="d1">data</data>
+      <data key="d2">Error count refers to the number of files that encountered errors during the indexing process and could not be indexed.</data>
+      <data key="d3">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036403</data>
+      <data key="d6" />
+    </node>
+    <node id="Indexed Count">
+      <data key="d0">Indexed Count</data>
+      <data key="d1">data</data>
+      <data key="d2">Indexed count refers to the total number of files successfully indexed during the repository indexing process.</data>
+      <data key="d3">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d4">indexer.py</data>
+      <data key="d5">1770036404</data>
+      <data key="d6" />
+    </node>
+    <node id="OPENAI_API_KEY">
+      <data key="d0">OPENAI_API_KEY</data>
+      <data key="d1">environmentvariable</data>
+      <data key="d2">OPENAI_API_KEY is an environment variable used to store the API key for accessing OpenAI services in the WikiGenerator class.</data>
+      <data key="d3">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d4">generator.py</data>
+      <data key="d5">1770036406</data>
+      <data key="d6" />
+    </node>
+    <node id="get_wiki_structure">
+      <data key="d0">get_wiki_structure</data>
+      <data key="d1">function</data>
+      <data key="d2">get_wiki_structure is a function imported in the script, likely used to define the structure of the generated wiki documentation.</data>
+      <data key="d3">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d4">generator.py</data>
+      <data key="d5">1770036408</data>
+      <data key="d6" />
+    </node>
+    <node id="get_category_index_prompt">
+      <data key="d0">get_category_index_prompt</data>
+      <data key="d1">function</data>
+      <data key="d2">get_category_index_prompt is a function used to generate prompts for category indexing in the WikiGenerator class.</data>
+      <data key="d3">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d4">generator.py</data>
+      <data key="d5">1770036408</data>
+      <data key="d6" />
+    </node>
+    <node id="Breadcrumb">
+      <data key="d0">Breadcrumb</data>
+      <data key="d1">concept</data>
+      <data key="d2">Breadcrumb is a concept used in the WikiGenerator to maintain navigation paths within the hierarchical documentation.&lt;SEP&gt;Breadcrumb is a navigation aid that represents the hierarchical path of a page within the wiki structure.</data>
+      <data key="d3">chunk-33a0ff4a990b22038a7cd28d988c82a8&lt;SEP&gt;chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d4">generator.py</data>
+      <data key="d5">1770036410</data>
+      <data key="d6" />
+    </node>
+    <node id="text-embedding-3-small">
+      <data key="d0">text-embedding-3-small</data>
+      <data key="d1">model</data>
+      <data key="d2">text-embedding-3-small is an embedding model used in the WikiGenerator for generating text embeddings with a dimension of 1536.&lt;SEP&gt;text-embedding-3-small is an embedding model used in Repowiki to generate compact representations of text data.</data>
+      <data key="d3">chunk-33a0ff4a990b22038a7cd28d988c82a8&lt;SEP&gt;chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">generator.py&lt;SEP&gt;config.py</data>
+      <data key="d5">1770036491</data>
+      <data key="d6" />
+    </node>
+    <node id="QueryParam">
+      <data key="d0">QueryParam</data>
+      <data key="d1">class</data>
+      <data key="d2">QueryParam is a class from the LightRAG library used to define parameters for querying language models, such as mode and top-k results.</data>
+      <data key="d3">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d4">generator.py</data>
+      <data key="d5">1770036410</data>
+      <data key="d6" />
+    </node>
+    <node id="README.md">
+      <data key="d0">README.md</data>
+      <data key="d1">artifact</data>
+      <data key="d2">README.md is a file format commonly used for writing documentation, including the generated wiki's root index and category pages.&lt;SEP&gt;README.md is a file generated by the WikiGenerator to serve as the index for each category in the hierarchical documentation.</data>
+      <data key="d3">chunk-33a0ff4a990b22038a7cd28d988c82a8&lt;SEP&gt;chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d4">generator.py</data>
+      <data key="d5">1770036410</data>
+      <data key="d6" />
+    </node>
+    <node id="GitHub Copilot">
+      <data key="d0">GitHub Copilot</data>
+      <data key="d1">software</data>
+      <data key="d2">GitHub Copilot is an AI-powered coding assistance tool that supports developers in generating code and documentation.&lt;SEP&gt;GitHub Copilot is an AI-powered code assistant that provides code suggestions and supports the LLM models used in Repowiki.</data>
+      <data key="d3">chunk-28bffece40cc95dd556f4f60299794a9&lt;SEP&gt;chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">generator.py&lt;SEP&gt;config.py</data>
+      <data key="d5">1770036477</data>
+      <data key="d6" />
+    </node>
+    <node id="Table of Contents">
+      <data key="d0">Table of Contents</data>
+      <data key="d1">content</data>
+      <data key="d2">The Table of Contents is a section in the generated wiki that provides quick navigation links to various parts of the documentation.</data>
+      <data key="d3">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d4">generator.py</data>
+      <data key="d5">1770036413</data>
+      <data key="d6" />
+    </node>
+    <node id="Category Pages">
+      <data key="d0">Category Pages</data>
+      <data key="d1">content</data>
+      <data key="d2">Category pages are individual sections of the wiki representing different topics, each generated with a hierarchical structure.</data>
+      <data key="d3">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d4">generator.py</data>
+      <data key="d5">1770036413</data>
+      <data key="d6" />
+    </node>
+    <node id="Root Index">
+      <data key="d0">Root Index</data>
+      <data key="d1">content</data>
+      <data key="d2">The Root Index is the main README file that includes a comprehensive overview and navigation links for the entire wiki.</data>
+      <data key="d3">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d4">generator.py</data>
+      <data key="d5">1770036419</data>
+      <data key="d6" />
+    </node>
+    <node id="FAQ">
+      <data key="d0">FAQ</data>
+      <data key="d1">content</data>
+      <data key="d2">FAQ is a section in the wiki that addresses frequently asked questions to help users troubleshoot common issues.</data>
+      <data key="d3">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d4">generator.py</data>
+      <data key="d5">1770036419</data>
+      <data key="d6" />
+    </node>
+    <node id="Page Tasks">
+      <data key="d0">Page Tasks</data>
+      <data key="d1">concept</data>
+      <data key="d2">Page Tasks refer to the tasks created to generate individual pages in the hierarchical wiki in parallel.</data>
+      <data key="d3">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d4">generator.py</data>
+      <data key="d5">1770036420</data>
+      <data key="d6" />
+    </node>
+    <node id="Knowledge Graph">
+      <data key="d0">Knowledge Graph</data>
+      <data key="d1">concept</data>
+      <data key="d2">A Knowledge Graph is a structured representation of information, used by LightRAG to generate the wiki documentation.&lt;SEP&gt;The Knowledge Graph is a structured representation of repository data created during the indexing process.</data>
+      <data key="d3">chunk-28bffece40cc95dd556f4f60299794a9&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">generator.py&lt;SEP&gt;cli.py</data>
+      <data key="d5">1770036469</data>
+      <data key="d6" />
+    </node>
+    <node id="Home">
+      <data key="d0">Home</data>
+      <data key="d1">content</data>
+      <data key="d2">Home is the top-level section of the wiki hierarchy, serving as the starting point for all navigation paths.</data>
+      <data key="d3">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d4">generator.py</data>
+      <data key="d5">1770036422</data>
+      <data key="d6" />
+    </node>
+    <node id="Main">
+      <data key="d0">Main</data>
+      <data key="d1">concept</data>
+      <data key="d2">Main refers to the primary entry point function in the provided code, responsible for parsing arguments and executing the appropriate command.</data>
+      <data key="d3">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036434</data>
+      <data key="d6" />
+    </node>
+    <node id="Index">
+      <data key="d0">Index</data>
+      <data key="d1">method</data>
+      <data key="d2">Index is a command in the CLI that indexes a code repository for further processing.</data>
+      <data key="d3">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036434</data>
+      <data key="d6" />
+    </node>
+    <node id="Generate">
+      <data key="d0">Generate</data>
+      <data key="d1">method</data>
+      <data key="d2">Generate is a command in the CLI that produces a wiki from the indexed data using optional extended documentation.</data>
+      <data key="d3">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036435</data>
+      <data key="d6" />
+    </node>
+    <node id="All">
+      <data key="d0">All</data>
+      <data key="d1">method</data>
+      <data key="d2">All is a command in the CLI that runs both the Index and Generate commands sequentially.</data>
+      <data key="d3">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036435</data>
+      <data key="d6" />
+    </node>
+    <node id="Test">
+      <data key="d0">Test</data>
+      <data key="d1">method</data>
+      <data key="d2">Test is a command in the CLI that checks the setup for errors and warnings before proceeding.</data>
+      <data key="d3">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036436</data>
+      <data key="d6" />
+    </node>
+    <node id="Argparse">
+      <data key="d0">Argparse</data>
+      <data key="d1">library</data>
+      <data key="d2">Argparse is a Python library used to create and manage command-line interfaces in the code.</data>
+      <data key="d3">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036438</data>
+      <data key="d6" />
+    </node>
+    <node id="LLM Models">
+      <data key="d0">LLM Models</data>
+      <data key="d1">data</data>
+      <data key="d2">LLM Models, such as gpt-4o and gpt-4o-mini, are large language models mentioned in the code for generating extended wikis.</data>
+      <data key="d3">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036438</data>
+      <data key="d6" />
+    </node>
+    <node id="Errors">
+      <data key="d0">Errors</data>
+      <data key="d1">concept</data>
+      <data key="d2">Errors refer to issues reported during the execution of the Test command that must be resolved before proceeding.</data>
+      <data key="d3">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036438</data>
+      <data key="d6" />
+    </node>
+    <node id="Warnings">
+      <data key="d0">Warnings</data>
+      <data key="d1">concept</data>
+      <data key="d2">Warnings are non-critical issues reported during the Test command that may affect the output but do not prevent execution.</data>
+      <data key="d3">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036439</data>
+      <data key="d6" />
+    </node>
+    <node id="LLM API Calls">
+      <data key="d0">LLM API Calls</data>
+      <data key="d1">method</data>
+      <data key="d2">LLM API calls refer to interactions with large language model APIs, used for generating extended wiki content and estimating associated costs.</data>
+      <data key="d3">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036441</data>
+      <data key="d6" />
+    </node>
+    <node id="OpenAI API Key">
+      <data key="d0">OpenAI API Key</data>
+      <data key="d1">data</data>
+      <data key="d2">The OpenAI API Key is an environment variable required for accessing OpenAI-based generation features in repowiki.</data>
+      <data key="d3">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036441</data>
+      <data key="d6" />
+    </node>
+    <node id="Python Files">
+      <data key="d0">Python Files</data>
+      <data key="d1">data</data>
+      <data key="d2">Python files are the scripts located within the repository that are counted and indexed during the setup process.</data>
+      <data key="d3">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036441</data>
+      <data key="d6" />
+    </node>
+    <node id="Markdown Files">
+      <data key="d0">Markdown Files</data>
+      <data key="d1">data</data>
+      <data key="d2">Markdown files are the documentation files in the repository that are counted and indexed during the setup process.</data>
+      <data key="d3">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036442</data>
+      <data key="d6" />
+    </node>
+    <node id="Output Directory">
+      <data key="d0">Output Directory</data>
+      <data key="d1">concept</data>
+      <data key="d2">The Output Directory is the file path where repowiki saves the generated wiki documentation.</data>
+      <data key="d3">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036443</data>
+      <data key="d6" />
+    </node>
+    <node id="Run Index">
+      <data key="d0">Run Index</data>
+      <data key="d1">method</data>
+      <data key="d2">Run Index is an asynchronous function in repowiki that performs the indexing step for repositories.</data>
+      <data key="d3">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036443</data>
+      <data key="d6" />
+    </node>
+    <node id="Run Generate">
+      <data key="d0">Run Generate</data>
+      <data key="d1">method</data>
+      <data key="d2">Run Generate is an asynchronous function in repowiki that generates wiki documentation, with an optional extended mode.</data>
+      <data key="d3">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036443</data>
+      <data key="d6" />
+    </node>
+    <node id="Run All">
+      <data key="d0">Run All</data>
+      <data key="d1">method</data>
+      <data key="d2">Run All is an asynchronous function in repowiki that sequentially performs both indexing and wiki generation steps.</data>
+      <data key="d3">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036444</data>
+      <data key="d6" />
+    </node>
+    <node id="Test Setup">
+      <data key="d0">Test Setup</data>
+      <data key="d1">method</data>
+      <data key="d2">Test Setup is a function in repowiki that validates the configuration and checks prerequisites for successful operation.</data>
+      <data key="d3">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d4">cli.py</data>
+      <data key="d5">1770036445</data>
+      <data key="d6" />
+    </node>
+    <node id="LLM Model">
+      <data key="d0">LLM Model</data>
+      <data key="d1">concept</data>
+      <data key="d2">LLM Model refers to a large language model used for various natural language processing tasks within Repowiki.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036446</data>
+      <data key="d6" />
+    </node>
+    <node id="gpt-4o">
+      <data key="d0">gpt-4o</data>
+      <data key="d1">model</data>
+      <data key="d2">gpt-4o is a language model used by Repowiki, featuring 128K context for advanced text processing.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036457</data>
+      <data key="d6" />
+    </node>
+    <node id="gpt-4o-mini">
+      <data key="d0">gpt-4o-mini</data>
+      <data key="d1">model</data>
+      <data key="d2">gpt-4o-mini is a smaller version of the gpt-4o language model, previously used in Repowiki.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036457</data>
+      <data key="d6" />
+    </node>
+    <node id="api_key">
+      <data key="d0">api_key</data>
+      <data key="d1">data</data>
+      <data key="d2">api_key is a configuration field in Repowiki for authentication, set to "oauth2" for GitHub Copilot.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036458</data>
+      <data key="d6" />
+    </node>
+    <node id="code_extensions">
+      <data key="d0">code_extensions</data>
+      <data key="d1">data</data>
+      <data key="d2">code_extensions is a configuration field in Repowiki that specifies the file extensions to be indexed, including ".py", ".md", and ".txt".</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036458</data>
+      <data key="d6" />
+    </node>
+    <node id="subprocess">
+      <data key="d0">subprocess</data>
+      <data key="d1">module</data>
+      <data key="d2">subprocess is a Python module used for running system commands, such as detecting repository names in Repowiki.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036459</data>
+      <data key="d6" />
+    </node>
+    <node id="os">
+      <data key="d0">os</data>
+      <data key="d1">module</data>
+      <data key="d2">os is a Python module used to interact with the operating system, including environment variables for configuring Repowiki.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036460</data>
+      <data key="d6" />
+    </node>
+    <node id="REPO_PATH">
+      <data key="d0">REPO_PATH</data>
+      <data key="d1">data</data>
+      <data key="d2">REPO_PATH is an environment variable that specifies the repository path for Repowiki.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036461</data>
+      <data key="d6" />
+    </node>
+    <node id="REPO_NAME">
+      <data key="d0">REPO_NAME</data>
+      <data key="d1">data</data>
+      <data key="d2">REPO_NAME is an environment variable or detected value representing the name of the repository in Repowiki.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036462</data>
+      <data key="d6" />
+    </node>
+    <node id="working_dir">
+      <data key="d0">working_dir</data>
+      <data key="d1">data</data>
+      <data key="d2">working_dir is a configuration field in Repowiki that specifies the directory used for storing intermediate files.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036463</data>
+      <data key="d6" />
+    </node>
+    <node id="output_dir">
+      <data key="d0">output_dir</data>
+      <data key="d1">data</data>
+      <data key="d2">output_dir is a configuration field in Repowiki that specifies the directory where processed documents are saved.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036463</data>
+      <data key="d6" />
+    </node>
+    <node id="workspace">
+      <data key="d0">workspace</data>
+      <data key="d1">data</data>
+      <data key="d2">workspace is a configuration field in Repowiki indicating the branch or workspace being used, defaulting to "main".</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036465</data>
+      <data key="d6" />
+    </node>
+    <node id="min_file_size">
+      <data key="d0">min_file_size</data>
+      <data key="d1">data</data>
+      <data key="d2">min_file_size is a configuration field in Repowiki that sets the minimum file size for indexing, measured in bytes.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036466</data>
+      <data key="d6" />
+    </node>
+    <node id="batch_report_interval">
+      <data key="d0">batch_report_interval</data>
+      <data key="d1">data</data>
+      <data key="d2">batch_report_interval is a configuration field in Repowiki that specifies the interval for reporting batch processing progress.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036467</data>
+      <data key="d6" />
+    </node>
+    <node id="max_parallel_insert">
+      <data key="d0">max_parallel_insert</data>
+      <data key="d1">data</data>
+      <data key="d2">max_parallel_insert is a configuration field in Repowiki that determines the number of documents processed concurrently.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036470</data>
+      <data key="d6" />
+    </node>
+    <node id="llm_model_max_async">
+      <data key="d0">llm_model_max_async</data>
+      <data key="d1">data</data>
+      <data key="d2">llm_model_max_async is a configuration field in Repowiki specifying the maximum number of concurrent LLM calls.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036470</data>
+      <data key="d6" />
+    </node>
+    <node id="embedding_func_max_async">
+      <data key="d0">embedding_func_max_async</data>
+      <data key="d1">data</data>
+      <data key="d2">embedding_func_max_async is a configuration field in Repowiki that sets the maximum number of concurrent embedding model calls.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036472</data>
+      <data key="d6" />
+    </node>
+    <node id="oauth2">
+      <data key="d0">oauth2</data>
+      <data key="d1">data</data>
+      <data key="d2">oauth2 is the API key protocol used in Repowiki for authenticating with GitHub Copilot.</data>
+      <data key="d3">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d4">config.py</data>
+      <data key="d5">1770036477</data>
+      <data key="d6" />
+    </node>
+    <edge source="Repowiki" target="Code Repositories">
+      <data key="d7">1.0</data>
+      <data key="d8">Repowiki generates hierarchical wiki documentation from code repositories.</data>
+      <data key="d9">documentation generation,hierarchical structure</data>
+      <data key="d10">chunk-93dd1e0de61f2c0ae716ae42d9736be0</data>
+      <data key="d11">__init__.py</data>
+      <data key="d12">1770036359</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repowiki" target="LightRAG Knowledge Graphs">
+      <data key="d7">1.0</data>
+      <data key="d8">Repowiki uses LightRAG knowledge graphs to structure its hierarchical wiki documentation.</data>
+      <data key="d9">knowledge representation,method utilization</data>
+      <data key="d10">chunk-93dd1e0de61f2c0ae716ae42d9736be0</data>
+      <data key="d11">__init__.py</data>
+      <data key="d12">1770036359</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repowiki" target="GitHub Copilot Models">
+      <data key="d7">1.0</data>
+      <data key="d8">Repowiki uses GitHub Copilot models, specifically those from adk-python/lightrag_openspec, for its default operations.</data>
+      <data key="d9">AI integration,coding assistance</data>
+      <data key="d10">chunk-93dd1e0de61f2c0ae716ae42d9736be0</data>
+      <data key="d11">__init__.py</data>
+      <data key="d12">1770036361</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repowiki" target="LightRAG Contributors">
+      <data key="d7">1.0</data>
+      <data key="d8">LightRAG Contributors are the developers behind Repowiki.</data>
+      <data key="d9">creation,maintenance</data>
+      <data key="d10">chunk-93dd1e0de61f2c0ae716ae42d9736be0</data>
+      <data key="d11">__init__.py</data>
+      <data key="d12">1770036362</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repowiki" target="Config">
+      <data key="d7">2.0</data>
+      <data key="d8">The Config module in Repowiki provides configuration settings for its operation.&lt;SEP&gt;Repowiki relies on the Config object to store and validate repository paths and settings.</data>
+      <data key="d9">configuration,module inclusion,repository settings</data>
+      <data key="d10">chunk-93dd1e0de61f2c0ae716ae42d9736be0&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">__init__.py&lt;SEP&gt;cli.py</data>
+      <data key="d12">1770036581</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repowiki" target="RepositoryIndexer">
+      <data key="d7">2.0</data>
+      <data key="d8">The RepositoryIndexer module in Repowiki is responsible for indexing code repositories.&lt;SEP&gt;Repowiki uses the RepositoryIndexer to index repositories into a knowledge graph.</data>
+      <data key="d9">indexing,knowledge graph,module inclusion</data>
+      <data key="d10">chunk-93dd1e0de61f2c0ae716ae42d9736be0&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">__init__.py&lt;SEP&gt;cli.py</data>
+      <data key="d12">1770036506</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repowiki" target="WikiGenerator">
+      <data key="d7">2.0</data>
+      <data key="d8">The WikiGenerator module in Repowiki is used to generate hierarchical wiki documentation.&lt;SEP&gt;Repowiki uses the WikiGenerator to create hierarchical wiki documentation from indexed repository data.</data>
+      <data key="d9">documentation,documentation creation,module inclusion,wiki generation</data>
+      <data key="d10">chunk-93dd1e0de61f2c0ae716ae42d9736be0&lt;SEP&gt;chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">__init__.py&lt;SEP&gt;cli.py</data>
+      <data key="d12">1770036547</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repowiki" target="OpenAI API Key">
+      <data key="d7">1.0</data>
+      <data key="d8">The OpenAI API Key is required by repowiki for using OpenAI-based generation features.</data>
+      <data key="d9">environment variable,generation dependency</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036556</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repowiki" target="Working Directory">
+      <data key="d7">1.0</data>
+      <data key="d8">The Working Directory is used by repowiki for temporary operations during setup.</data>
+      <data key="d9">file path,intermediate operations</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036561</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repowiki" target="Output Directory">
+      <data key="d7">1.0</data>
+      <data key="d8">The Output Directory is where repowiki saves the generated wiki documentation.</data>
+      <data key="d9">file path,wiki storage</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036566</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repowiki" target="Python">
+      <data key="d7">1.0</data>
+      <data key="d8">Repowiki is developed in Python, leveraging its features for repository indexing and documentation generation.</data>
+      <data key="d9">programming,tool development</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036572</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repowiki" target="Repository">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository is the source data that is indexed and documented using repowiki.</data>
+      <data key="d9">documentation,source data</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036575</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repowiki" target="LightRAG">
+      <data key="d7">1.0</data>
+      <data key="d8">LightRAG may be used in repowiki for additional functionalities if successfully imported.</data>
+      <data key="d9">module import,optional functionality</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036577</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GitHub Copilot Models" target="adk-python/lightrag_openspec">
+      <data key="d7">1.0</data>
+      <data key="d8">GitHub Copilot models mentioned in Repowiki include the specific implementation adk-python/lightrag_openspec.</data>
+      <data key="d9">AI models,specific implementation</data>
+      <data key="d10">chunk-93dd1e0de61f2c0ae716ae42d9736be0</data>
+      <data key="d11">__init__.py</data>
+      <data key="d12">1770036362</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GitHub Copilot Models" target="LiteLLM">
+      <data key="d7">1.0</data>
+      <data key="d8">GitHub Copilot Models provide the basis for the LiteLLM language model implementation used in the indexing process.</data>
+      <data key="d9">implementation,language model</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036492</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="Repository Indexer">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository Indexer uses the Config class to manage and validate configuration settings, such as API keys and model parameters.</data>
+      <data key="d9">configuration,dependency</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036561</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="Working Directory">
+      <data key="d7">1.0</data>
+      <data key="d8">Config determines the storage location in the working directory for managing indexed files.</data>
+      <data key="d9">configuration,storage</data>
+      <data key="d10">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036570</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="WikiGenerator">
+      <data key="d7">1.0</data>
+      <data key="d8">WikiGenerator relies on the Config class to handle various configuration parameters, including API keys and model specifications.</data>
+      <data key="d9">configuration,dependency</data>
+      <data key="d10">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036573</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="OPENAI_API_KEY">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class uses the OPENAI_API_KEY environment variable to manage API access for OpenAI services in the WikiGenerator.</data>
+      <data key="d9">API access,configuration parameter</data>
+      <data key="d10">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036575</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="Main">
+      <data key="d7">1.0</data>
+      <data key="d8">Main uses Config to manage environment variables and construct the configuration settings.</data>
+      <data key="d9">argument parsing,configuration management</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036577</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="Test Setup">
+      <data key="d7">1.0</data>
+      <data key="d8">Test Setup uses the Config object to validate repository settings and detect any issues.</data>
+      <data key="d9">configuration validation,setup</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036584</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="Path">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class uses the Path class to manage paths for repository, working, and output directories.</data>
+      <data key="d9">class usage,filesystem interaction</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036586</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="LLM Model">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class includes settings for the LLM Model used in Repowiki for text processing tasks.</data>
+      <data key="d9">configuration,natural language processing</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036587</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="GitHub Copilot">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class integrates with GitHub Copilot for advanced code suggestions and text processing.</data>
+      <data key="d9">AI assistance,integration</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036590</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="code_extensions">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class uses the code_extensions field to specify which file types to index.</data>
+      <data key="d9">configuration,file indexing</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036590</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="subprocess">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class uses the subprocess module to detect the repository name from Git.</data>
+      <data key="d9">module usage,repository detection</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036591</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="os">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class uses the os module to read environment variables for configuring paths and settings.</data>
+      <data key="d9">environment variables,module usage</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036591</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="REPO_PATH">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class reads the REPO_PATH environment variable to determine the repository location.</data>
+      <data key="d9">environment variable,repository path</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036592</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="REPO_NAME">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class uses REPO_NAME to store the repository name, which can be auto-detected or provided as an environment variable.</data>
+      <data key="d9">auto-detection,repository metadata</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036592</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="working_dir">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class includes the working_dir field to define the directory for storing intermediate files.</data>
+      <data key="d9">configuration,storage settings</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036593</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="output_dir">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class includes the output_dir field to define the directory for saving processed documents.</data>
+      <data key="d9">configuration,output settings</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036593</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="workspace">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class uses the workspace field to specify the branch or workspace being used, defaulting to "main".</data>
+      <data key="d9">branch settings,configuration</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036594</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="min_file_size">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class uses the min_file_size field to set the minimum file size for indexing.</data>
+      <data key="d9">configuration,indexing settings</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036594</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="batch_report_interval">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class uses the batch_report_interval field to specify how often to report batch processing progress.</data>
+      <data key="d9">batch processing,configuration</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036594</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="max_parallel_insert">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class uses the max_parallel_insert field to set the number of documents processed concurrently.</data>
+      <data key="d9">configuration,parallel processing</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036595</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="llm_model_max_async">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class uses the llm_model_max_async field to set the maximum number of concurrent LLM calls.</data>
+      <data key="d9">LLM settings,configuration</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036595</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Config" target="embedding_func_max_async">
+      <data key="d7">1.0</data>
+      <data key="d8">The Config class uses the embedding_func_max_async field to set the maximum number of concurrent embedding model calls.</data>
+      <data key="d9">configuration,embedding settings</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036596</data>
+      <data key="d13" />
+    </edge>
+    <edge source="RepositoryIndexer" target="Run Index">
+      <data key="d7">1.0</data>
+      <data key="d8">Run Index calls the RepositoryIndexer to perform the indexing step for repositories.</data>
+      <data key="d9">indexing,method execution</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036515</data>
+      <data key="d13" />
+    </edge>
+    <edge source="RepositoryIndexer" target="Repository">
+      <data key="d7">1.0</data>
+      <data key="d8">RepositoryIndexer processes the files in the repository for indexing.</data>
+      <data key="d9">file processing,indexing</data>
+      <data key="d10">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036562</data>
+      <data key="d13" />
+    </edge>
+    <edge source="RepositoryIndexer" target="Knowledge Graph">
+      <data key="d7">1.0</data>
+      <data key="d8">The RepositoryIndexer creates the Knowledge Graph by indexing the repository data.</data>
+      <data key="d9">data structure,indexing</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036578</data>
+      <data key="d13" />
+    </edge>
+    <edge source="WikiGenerator" target="Breadcrumb">
+      <data key="d7">1.0</data>
+      <data key="d8">WikiGenerator employs the concept of Breadcrumb to maintain hierarchical navigation paths in the generated wiki.</data>
+      <data key="d9">documentation structure,navigation</data>
+      <data key="d10">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036500</data>
+      <data key="d13" />
+    </edge>
+    <edge source="WikiGenerator" target="get_category_index_prompt">
+      <data key="d7">1.0</data>
+      <data key="d8">get_category_index_prompt is used by WikiGenerator to generate prompts for creating index pages in the wiki documentation.</data>
+      <data key="d9">function utility,indexing</data>
+      <data key="d10">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036507</data>
+      <data key="d13" />
+    </edge>
+    <edge source="WikiGenerator" target="README.md">
+      <data key="d7">1.0</data>
+      <data key="d8">README.md files are created by the WikiGenerator to provide an index page for each category in the hierarchical documentation.</data>
+      <data key="d9">artifact creation,documentation</data>
+      <data key="d10">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036516</data>
+      <data key="d13" />
+    </edge>
+    <edge source="WikiGenerator" target="LLM API Calls">
+      <data key="d7">1.0</data>
+      <data key="d8">LLM API calls are used by the WikiGenerator to produce extended wiki content and estimate costs.</data>
+      <data key="d9">cost estimation,extended generation</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036525</data>
+      <data key="d13" />
+    </edge>
+    <edge source="WikiGenerator" target="LiteLLMEmbedding">
+      <data key="d7">1.0</data>
+      <data key="d8">WikiGenerator utilizes LiteLLMEmbedding to create text-based embeddings for processing knowledge graph data.</data>
+      <data key="d9">embedding creation,library integration</data>
+      <data key="d10">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036532</data>
+      <data key="d13" />
+    </edge>
+    <edge source="WikiGenerator" target="LiteLLM">
+      <data key="d7">1.0</data>
+      <data key="d8">WikiGenerator uses the LiteLLM library to perform text generation tasks based on user-provided prompts.</data>
+      <data key="d9">library integration,text generation</data>
+      <data key="d10">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036536</data>
+      <data key="d13" />
+    </edge>
+    <edge source="WikiGenerator" target="Run Generate">
+      <data key="d7">1.0</data>
+      <data key="d8">Run Generate calls the WikiGenerator to create hierarchical wiki documentation.</data>
+      <data key="d9">method execution,wiki generation</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036538</data>
+      <data key="d13" />
+    </edge>
+    <edge source="WikiGenerator" target="GitHub Copilot">
+      <data key="d7">1.0</data>
+      <data key="d8">WikiGenerator integrates GitHub Copilot models to assist in generating wiki content.</data>
+      <data key="d9">AI assistance,integration</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036556</data>
+      <data key="d13" />
+    </edge>
+    <edge source="WikiGenerator" target="LightRAG">
+      <data key="d7">2.0</data>
+      <data key="d8">WikiGenerator integrates the LightRAG library to manage embeddings and language model queries for generating documentation.&lt;SEP&gt;WikiGenerator leverages LightRAG to create hierarchical wikis from codebases.</data>
+      <data key="d9">functionality,integration,library integration</data>
+      <data key="d10">chunk-33a0ff4a990b22038a7cd28d988c82a8&lt;SEP&gt;chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036562</data>
+      <data key="d13" />
+    </edge>
+    <edge source="WikiGenerator" target="Knowledge Graph">
+      <data key="d7">1.0</data>
+      <data key="d8">The WikiGenerator uses the Knowledge Graph as a data source to generate wiki documentation.</data>
+      <data key="d9">data source,documentation</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036580</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Prompts.py" target="Wiki Generation Prompts">
+      <data key="d7">1.0</data>
+      <data key="d8">Prompts.py contains templates for generating structured documentation for codebases.</data>
+      <data key="d9">documentation,template design</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036423</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Prompts.py" target="PageDefinition">
+      <data key="d7">1.0</data>
+      <data key="d8">The PageDefinition data structure is implemented in Prompts.py to define wiki page attributes.</data>
+      <data key="d9">data structure,implementation</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036443</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Prompts.py" target="Dependencies">
+      <data key="d7">1.0</data>
+      <data key="d8">Dependencies is a section in the wiki prompts defined within Prompts.py to outline project requirements.</data>
+      <data key="d9">documentation,requirements</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036492</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Prompts.py" target="Testing">
+      <data key="d7">1.0</data>
+      <data key="d8">Testing is a section in the wiki prompts defined within Prompts.py to ensure project functionality.</data>
+      <data key="d9">documentation,verification</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036504</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Prompts.py" target="Extension Points">
+      <data key="d7">1.0</data>
+      <data key="d8">Extension Points is a section in the wiki prompts defined within Prompts.py for highlighting customizable parts of the project.</data>
+      <data key="d9">customization,documentation</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036512</data>
+      <data key="d13" />
+    </edge>
+    <edge source="PageDefinition" target="Public API">
+      <data key="d7">1.0</data>
+      <data key="d8">The Public API page is configured using the PageDefinition method to define its structure and prompts.</data>
+      <data key="d9">configuration,page definition</data>
+      <data key="d10">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036492</data>
+      <data key="d13" />
+    </edge>
+    <edge source="PageDefinition" target="Testing Guide">
+      <data key="d7">1.0</data>
+      <data key="d8">The Testing Guide page is configured using the PageDefinition method to define its structure and prompts.</data>
+      <data key="d9">configuration,page definition</data>
+      <data key="d10">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036505</data>
+      <data key="d13" />
+    </edge>
+    <edge source="PageDefinition" target="Code Examples">
+      <data key="d7">1.0</data>
+      <data key="d8">The Code Examples page is configured using the PageDefinition method to define its structure and prompts.</data>
+      <data key="d9">configuration,page definition</data>
+      <data key="d10">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036513</data>
+      <data key="d13" />
+    </edge>
+    <edge source="PageDefinition" target="Extension Points">
+      <data key="d7">1.0</data>
+      <data key="d8">The Extension Points page is configured using the PageDefinition method to define its structure and prompts.</data>
+      <data key="d9">configuration,page definition</data>
+      <data key="d10">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036523</data>
+      <data key="d13" />
+    </edge>
+    <edge source="PageDefinition" target="Dependencies">
+      <data key="d7">1.0</data>
+      <data key="d8">The Dependencies page is configured using the PageDefinition method to define its structure and prompts.</data>
+      <data key="d9">configuration,page definition</data>
+      <data key="d10">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036539</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Overview And Architecture" target="Project Overview">
+      <data key="d7">1.0</data>
+      <data key="d8">The Project Overview page is part of the Overview And Architecture section in the wiki structure.</data>
+      <data key="d9">documentation,section-page</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036423</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Overview And Architecture" target="Architecture">
+      <data key="d7">1.0</data>
+      <data key="d8">The Architecture page is included in the Overview And Architecture section for codebase analysis.</data>
+      <data key="d9">documentation,section-page</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036443</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Overview And Architecture" target="Design Decisions">
+      <data key="d7">1.0</data>
+      <data key="d8">The Design Decisions page is part of the Overview And Architecture section, explaining the codebase's design principles.</data>
+      <data key="d9">documentation,section-page</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036492</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Getting Started" target="Installation">
+      <data key="d7">1.0</data>
+      <data key="d8">The Installation page is part of the Getting Started section, guiding users on initial setup.</data>
+      <data key="d9">section-page,user guidance</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036443</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Getting Started" target="Configuration Guide">
+      <data key="d7">1.0</data>
+      <data key="d8">The Configuration Guide page is included in the Getting Started section for documenting setup options.</data>
+      <data key="d9">section-page,user guidance</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036491</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Getting Started" target="Root Index">
+      <data key="d7">1.0</data>
+      <data key="d8">The Root Index includes a link to the Getting Started guide for user onboarding.</data>
+      <data key="d9">content section,guide</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036530</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Core Concepts" target="Key Components">
+      <data key="d7">1.0</data>
+      <data key="d8">The Key Components page is part of the Core Concepts section, describing important codebase modules.</data>
+      <data key="d9">codebase understanding,section-page</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036423</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Core Concepts" target="Project Structure">
+      <data key="d7">1.0</data>
+      <data key="d8">The Project Structure page is included in the Core Concepts section to explain the codebase's organization.</data>
+      <data key="d9">codebase understanding,section-page</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036443</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Core Concepts" target="Common Workflows">
+      <data key="d7">1.0</data>
+      <data key="d8">The Common Workflows page is part of the Core Concepts section, focusing on core processes.</data>
+      <data key="d9">codebase understanding,section-page</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036492</data>
+      <data key="d13" />
+    </edge>
+    <edge source="API Reference" target="Public API">
+      <data key="d7">1.0</data>
+      <data key="d8">The Public API page is part of the API Reference section and documents the codebase's main interfaces.</data>
+      <data key="d9">codebase documentation,section-page</data>
+      <data key="d10">chunk-e4664182ce184ecb54cc8e0de51ade1c</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036443</data>
+      <data key="d13" />
+    </edge>
+    <edge source="API Reference" target="Root Index">
+      <data key="d7">1.0</data>
+      <data key="d8">The Root Index includes a link to the API Reference section for accessing technical documentation.</data>
+      <data key="d9">content section,technical details</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036515</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Public API" target="Code Examples">
+      <data key="d7">1.0</data>
+      <data key="d8">Public API and Code Examples are complementary documentation pages that provide detailed information and practical examples of interacting with the codebase.</data>
+      <data key="d9">documentation,usage guidance</data>
+      <data key="d10">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036425</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Dependencies" target="Development Guide">
+      <data key="d7">1.0</data>
+      <data key="d8">Dependencies is a page within the Development Guide that focuses on analyzing external dependencies and system requirements.</data>
+      <data key="d9">documentation structure,subsection</data>
+      <data key="d10">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036536</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Extension Points" target="Development Guide">
+      <data key="d7">1.0</data>
+      <data key="d8">Extension Points is a page within the Development Guide that outlines customization and extension mechanisms for the codebase.</data>
+      <data key="d9">documentation structure,subsection</data>
+      <data key="d10">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036528</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Development Guide" target="Testing Guide">
+      <data key="d7">1.0</data>
+      <data key="d8">Testing Guide is a page within the Development Guide that provides practical guidance on testing the codebase.</data>
+      <data key="d9">documentation structure,subsection</data>
+      <data key="d10">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036426</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Development Guide" target="Category Index Prompt">
+      <data key="d7">1.0</data>
+      <data key="d8">Category Index Prompt is used to generate a detailed index page for the Development Guide section of the documentation.</data>
+      <data key="d9">documentation organization,index creation</data>
+      <data key="d10">chunk-5738b510112bf43948c4d3f1742feab5</data>
+      <data key="d11">prompts.py</data>
+      <data key="d12">1770036533</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository Indexer" target="LiteLLM">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository Indexer uses the LiteLLM class to create lightweight language model instances for processing.</data>
+      <data key="d9">dependency,language model</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036447</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository Indexer" target="LiteLLMEmbedding">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository Indexer uses LiteLLMEmbedding to generate embeddings for texts during the indexing process.</data>
+      <data key="d9">dependency,embeddings</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036492</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository Indexer" target="EmbeddingFunc">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository Indexer utilizes EmbeddingFunc to wrap embedding functions with specific configurations.</data>
+      <data key="d9">dependency,embedding utility</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036505</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository Indexer" target="JsonDocStatusStorage">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository Indexer requires JsonDocStatusStorage as part of the LightRAG initialization process.</data>
+      <data key="d9">LightRAG,storage requirement</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036514</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository Indexer" target="Files">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository Indexer collects files from the repository to prepare them for indexing.</data>
+      <data key="d9">file collection,indexing</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036523</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository Indexer" target="llama_index_complete_if_cache">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository Indexer uses the llama_index_complete_if_cache function for LLM completions with cache support.</data>
+      <data key="d9">caching,function usage</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036530</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository Indexer" target="llama_index_embed">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository Indexer utilizes the llama_index_embed function to generate embeddings for texts.</data>
+      <data key="d9">embeddings,function usage</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036534</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository Indexer" target="asyncio">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository Indexer uses asyncio to enable asynchronous operations and concurrency in its methods.</data>
+      <data key="d9">asynchronous operations,concurrency</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036538</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository Indexer" target="Python">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository Indexer is implemented in Python.</data>
+      <data key="d9">implementation,programming language</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036541</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository Indexer" target="LightRAG">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository Indexer integrates with the LightRAG framework to build knowledge graphs from a code repository.</data>
+      <data key="d9">framework,integration</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036547</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository Indexer" target="Repository">
+      <data key="d7">1.0</data>
+      <data key="d8">The Repository Indexer processes and indexes code and documentation files from a repository into a knowledge graph.</data>
+      <data key="d9">data processing,indexing</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036556</data>
+      <data key="d13" />
+    </edge>
+    <edge source="LightRAG" target="Parallel Batch Processing">
+      <data key="d7">1.0</data>
+      <data key="d8">LightRAG facilitates parallel batch processing for efficient handling of multiple files.</data>
+      <data key="d9">automation,efficiency</data>
+      <data key="d10">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036558</data>
+      <data key="d13" />
+    </edge>
+    <edge source="LightRAG" target="QueryParam">
+      <data key="d7">1.0</data>
+      <data key="d8">QueryParam is used by LightRAG to specify parameters for querying language models in the WikiGenerator.</data>
+      <data key="d9">library usage,parameter definition</data>
+      <data key="d10">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036570</data>
+      <data key="d13" />
+    </edge>
+    <edge source="LightRAG" target="README.md">
+      <data key="d7">1.0</data>
+      <data key="d8">LightRAG is used to generate README.md files as part of the hierarchical wiki documentation.</data>
+      <data key="d9">content creation,documentation generation</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036573</data>
+      <data key="d13" />
+    </edge>
+    <edge source="LightRAG" target="Knowledge Graph">
+      <data key="d7">1.0</data>
+      <data key="d8">The Knowledge Graph is the underlying data structure used by LightRAG to generate hierarchical wiki documentation.</data>
+      <data key="d9">data structure,method</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036576</data>
+      <data key="d13" />
+    </edge>
+    <edge source="LightRAG" target="Test Setup">
+      <data key="d7">1.0</data>
+      <data key="d8">Test Setup checks for the presence of the LightRAG module as part of the setup process.</data>
+      <data key="d9">module import,setup validation</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036580</data>
+      <data key="d13" />
+    </edge>
+    <edge source="LightRAG" target="EmbeddingFunc">
+      <data key="d7">1.0</data>
+      <data key="d8">The LightRAG framework provides the EmbeddingFunc utility for configuring embedding functions.</data>
+      <data key="d9">embedding,utility</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036583</data>
+      <data key="d13" />
+    </edge>
+    <edge source="LightRAG" target="JsonDocStatusStorage">
+      <data key="d7">1.0</data>
+      <data key="d8">JsonDocStatusStorage is a storage component required for the operation of the LightRAG framework.</data>
+      <data key="d9">requirement,storage component</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036584</data>
+      <data key="d13" />
+    </edge>
+    <edge source="LiteLLM" target="llama_index_complete_if_cache">
+      <data key="d7">1.0</data>
+      <data key="d8">llama_index_complete_if_cache uses the LiteLLM library to complete queries with caching in the WikiGenerator.</data>
+      <data key="d9">library usage,query completion</data>
+      <data key="d10">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036538</data>
+      <data key="d13" />
+    </edge>
+    <edge source="LiteLLMEmbedding" target="text-embedding-3-small">
+      <data key="d7">1.0</data>
+      <data key="d8">LiteLLMEmbedding utilizes the text-embedding-3-small model to generate embeddings for text input in the WikiGenerator.</data>
+      <data key="d9">embedding model,library usage</data>
+      <data key="d10">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036536</data>
+      <data key="d13" />
+    </edge>
+    <edge source="LiteLLMEmbedding" target="EmbeddingFunc">
+      <data key="d7">1.0</data>
+      <data key="d8">EmbeddingFunc wraps the LiteLLMEmbedding functionality to define parameters for embedding operations in the WikiGenerator.</data>
+      <data key="d9">functionality,library integration</data>
+      <data key="d10">chunk-33a0ff4a990b22038a7cd28d988c82a8</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036587</data>
+      <data key="d13" />
+    </edge>
+    <edge source="EmbeddingFunc" target="lightrag.utils">
+      <data key="d7">1.0</data>
+      <data key="d8">The lightrag.utils module provides the EmbeddingFunc class for configuring embedding functions in LightRAG.</data>
+      <data key="d9">module inclusion,utility</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036585</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Path" target="Python">
+      <data key="d7">1.0</data>
+      <data key="d8">Path is a Python module used in repowiki for handling filesystem paths.</data>
+      <data key="d9">filesystem operations,module usage</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036575</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Path" target="Index">
+      <data key="d7">1.0</data>
+      <data key="d8">Path is used in the Index command to specify the location of the repository.</data>
+      <data key="d9">file system,repository paths</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036577</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Path" target="Generate">
+      <data key="d7">1.0</data>
+      <data key="d8">Path is used in the Generate command to specify the output directory for the generated wiki.</data>
+      <data key="d9">file system,output paths</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036580</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Path" target="Files">
+      <data key="d7">1.0</data>
+      <data key="d8">The Path class is used to handle filesystem paths for files to be indexed.</data>
+      <data key="d9">file handling,library</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036583</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository" target="Python Files">
+      <data key="d7">1.0</data>
+      <data key="d8">Python files are part of the repository content indexed during the setup process.</data>
+      <data key="d9">code content,file type</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036577</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository" target="Markdown Files">
+      <data key="d7">1.0</data>
+      <data key="d8">Markdown files are part of the repository content indexed during the setup process.</data>
+      <data key="d9">documentation content,file type</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036580</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Repository" target="Test Setup">
+      <data key="d7">1.0</data>
+      <data key="d8">Test Setup validates the existence and structure of the repository during the setup process.</data>
+      <data key="d9">repository structure,validation</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036583</data>
+      <data key="d13" />
+    </edge>
+    <edge source="llama_index_complete_if_cache" target="lightrag.llm.llama_index_impl">
+      <data key="d7">1.0</data>
+      <data key="d8">The lightrag.llm.llama_index_impl module includes the llama_index_complete_if_cache function for LLM completions with cache support.</data>
+      <data key="d9">function,module inclusion</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036453</data>
+      <data key="d13" />
+    </edge>
+    <edge source="llama_index_embed" target="lightrag.llm.llama_index_impl">
+      <data key="d7">1.0</data>
+      <data key="d8">The lightrag.llm.llama_index_impl module includes the llama_index_embed function for generating embeddings.</data>
+      <data key="d9">function,module inclusion</data>
+      <data key="d10">chunk-1fe06528eced4a8ddb1d68ac9207ea3d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036495</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Python" target="Test Setup">
+      <data key="d7">1.0</data>
+      <data key="d8">Test Setup checks if the Python version meets the required compatibility for repowiki.</data>
+      <data key="d9">compatibility,language version</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036577</data>
+      <data key="d13" />
+    </edge>
+    <edge source="File Contents" target="Indexing Process">
+      <data key="d7">1.0</data>
+      <data key="d8">File contents are read and processed as part of the indexing process.</data>
+      <data key="d9">data organization,processing</data>
+      <data key="d10">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036454</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Parallel Batch Processing" target="Max Parallel Insert">
+      <data key="d7">1.0</data>
+      <data key="d8">Max Parallel Insert determines the number of documents processed concurrently during parallel batch processing.</data>
+      <data key="d9">concurrency,efficiency</data>
+      <data key="d10">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036454</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Parallel Batch Processing" target="Asyncio">
+      <data key="d7">1.0</data>
+      <data key="d8">Asyncio is used to manage concurrent tasks during the parallel batch processing method.</data>
+      <data key="d9">asynchronous programming,task management</data>
+      <data key="d10">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036496</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Parallel Batch Processing" target="Indexing Process">
+      <data key="d7">1.0</data>
+      <data key="d8">Parallel batch processing enhances the efficiency of the indexing process by handling files concurrently.</data>
+      <data key="d9">concurrency,efficiency</data>
+      <data key="d10">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036507</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Indexing Process" target="Error Handling">
+      <data key="d7">1.0</data>
+      <data key="d8">Error handling is implemented to ensure the indexing process continues despite errors.</data>
+      <data key="d9">fault tolerance,recovery</data>
+      <data key="d10">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036496</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Indexing Process" target="Error Count">
+      <data key="d7">1.0</data>
+      <data key="d8">Error count tracks the number of files that failed during the indexing process.</data>
+      <data key="d9">error tracking,performance monitoring</data>
+      <data key="d10">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036515</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Indexing Process" target="Indexed Count">
+      <data key="d7">1.0</data>
+      <data key="d8">Indexed count indicates the total number of successfully processed files during the indexing process.</data>
+      <data key="d9">progress tracking,success monitoring</data>
+      <data key="d10">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036524</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Error Handling" target="Skipped Files">
+      <data key="d7">1.0</data>
+      <data key="d8">Skipped files are managed as part of the error handling process during the indexing task.</data>
+      <data key="d9">file management,indexing recovery</data>
+      <data key="d10">chunk-ae4970d4ebd84293eb94fe47b1dcaf8d</data>
+      <data key="d11">indexer.py</data>
+      <data key="d12">1770036506</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Asyncio" target="Index">
+      <data key="d7">1.0</data>
+      <data key="d8">Asyncio is used to run the Index command asynchronously.</data>
+      <data key="d9">asynchronous execution,task management</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036580</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Asyncio" target="Generate">
+      <data key="d7">1.0</data>
+      <data key="d8">Asyncio is used to run the Generate command asynchronously.</data>
+      <data key="d9">asynchronous execution,task management</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036584</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Breadcrumb" target="Category Pages">
+      <data key="d7">1.0</data>
+      <data key="d8">Breadcrumbs are used to show the hierarchical path of each Category Page in the wiki structure.</data>
+      <data key="d9">hierarchy,navigation context</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036524</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Breadcrumb" target="Home">
+      <data key="d7">1.0</data>
+      <data key="d8">Home serves as the root of the navigation path represented by Breadcrumbs in the wiki hierarchy.</data>
+      <data key="d9">hierarchical starting point,navigation</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036530</data>
+      <data key="d13" />
+    </edge>
+    <edge source="README.md" target="Table of Contents">
+      <data key="d7">1.0</data>
+      <data key="d8">README.md files include a Table of Contents section for easy navigation.</data>
+      <data key="d9">content inclusion,navigation</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036525</data>
+      <data key="d13" />
+    </edge>
+    <edge source="README.md" target="GitHub Copilot">
+      <data key="d7">1.0</data>
+      <data key="d8">GitHub Copilot models are used to assist in generating the content for README.md files.</data>
+      <data key="d9">AI assistance,content generation</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036532</data>
+      <data key="d13" />
+    </edge>
+    <edge source="GitHub Copilot" target="gpt-4o">
+      <data key="d7">1.0</data>
+      <data key="d8">gpt-4o is a language model used by GitHub Copilot within the Repowiki configuration.</data>
+      <data key="d9">AI-powered tasks,model usage</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036561</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Table of Contents" target="Root Index">
+      <data key="d7">1.0</data>
+      <data key="d8">The Root Index contains the Table of Contents as part of its comprehensive overview.</data>
+      <data key="d9">content structure,hierarchy</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036492</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Category Pages" target="Root Index">
+      <data key="d7">1.0</data>
+      <data key="d8">The Root Index provides links to all Category Pages within the wiki for structured navigation.</data>
+      <data key="d9">hierarchical structure,navigation</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036506</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Category Pages" target="Page Tasks">
+      <data key="d7">1.0</data>
+      <data key="d8">Page Tasks are responsible for generating the content of individual Category Pages in the wiki.</data>
+      <data key="d9">page creation,task execution</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036515</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Root Index" target="FAQ">
+      <data key="d7">1.0</data>
+      <data key="d8">The Root Index includes a link to the FAQ section for addressing common user questions.</data>
+      <data key="d9">content section,troubleshooting</data>
+      <data key="d10">chunk-28bffece40cc95dd556f4f60299794a9</data>
+      <data key="d11">generator.py</data>
+      <data key="d12">1770036523</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Main" target="Index">
+      <data key="d7">1.0</data>
+      <data key="d8">Main executes the Index command to process the repository data.</data>
+      <data key="d9">command execution,indexing</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036504</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Main" target="Generate">
+      <data key="d7">1.0</data>
+      <data key="d8">Main executes the Generate command to create wikis from indexed data.</data>
+      <data key="d9">command execution,wiki generation</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036512</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Main" target="All">
+      <data key="d7">1.0</data>
+      <data key="d8">Main executes the All command to run both Index and Generate in sequence.</data>
+      <data key="d9">combined commands,command execution</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036521</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Main" target="Test">
+      <data key="d7">1.0</data>
+      <data key="d8">Main executes the Test command to verify the setup before processing.</data>
+      <data key="d9">command execution,setup verification</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036527</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Main" target="Argparse">
+      <data key="d7">1.0</data>
+      <data key="d8">Argparse is used in Main to parse command-line arguments and manage subcommands.</data>
+      <data key="d9">CLI creation,argument parsing</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036532</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Generate" target="LLM Models">
+      <data key="d7">1.0</data>
+      <data key="d8">LLM Models are specified in the Generate command for creating extended wikis with comprehensive documentation.</data>
+      <data key="d9">extended documentation,model usage</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036583</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Test" target="Errors">
+      <data key="d7">1.0</data>
+      <data key="d8">The Test command identifies errors in the setup that must be addressed before running other commands.</data>
+      <data key="d9">error detection,setup validation</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036504</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Test" target="Warnings">
+      <data key="d7">1.0</data>
+      <data key="d8">The Test command reports warnings that may require attention but do not block execution.</data>
+      <data key="d9">setup validation,warning detection</data>
+      <data key="d10">chunk-562808b51a9654820bb85ba8ea7e6766</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036512</data>
+      <data key="d13" />
+    </edge>
+    <edge source="OpenAI API Key" target="Test Setup">
+      <data key="d7">1.0</data>
+      <data key="d8">Test Setup verifies whether the OpenAI API Key is set as an environment variable.</data>
+      <data key="d9">environment variable,setup validation</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036561</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Run Index" target="Run All">
+      <data key="d7">1.0</data>
+      <data key="d8">Run All begins by executing the Run Index function as the first step of the process.</data>
+      <data key="d9">indexing,method sequence</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036506</data>
+      <data key="d13" />
+    </edge>
+    <edge source="Run Generate" target="Run All">
+      <data key="d7">1.0</data>
+      <data key="d8">Run All proceeds to execute the Run Generate function after completing the indexing step.</data>
+      <data key="d9">method sequence,wiki generation</data>
+      <data key="d10">chunk-6c1f4bd558484760273530dd5d483b9d</data>
+      <data key="d11">cli.py</data>
+      <data key="d12">1770036545</data>
+      <data key="d13" />
+    </edge>
+    <edge source="api_key" target="oauth2">
+      <data key="d7">1.0</data>
+      <data key="d8">The api_key field in Repowiki is set to "oauth2" for authenticating with GitHub Copilot.</data>
+      <data key="d9">API protocol,authentication</data>
+      <data key="d10">chunk-850fb5818a5e36a4ddd9b3f9d9cbb176</data>
+      <data key="d11">config.py</data>
+      <data key="d12">1770036513</data>
+      <data key="d13" />
+    </edge>
+  </graph>
+</graphml>

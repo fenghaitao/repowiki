@@ -1,7 +1,7 @@
 """Configuration for repowiki"""
 import os
 from pathlib import Path
-from typing import Set
+from typing import Set, Optional
 from dataclasses import dataclass, field
 
 
@@ -10,10 +10,13 @@ class Config:
     """Repowiki configuration"""
     
     # Paths
-    lightrag_repo: Path = Path("/home/hfeng1/lightrag")
-    working_dir: Path = Path("./lightrag_storage")
+    repo_path: Path = Path(".")  # Current directory by default
+    working_dir: Path = Path("./repowiki_storage")
     output_dir: Path = Path("./wiki_docs")
     workspace: str = "main"
+    
+    # Repository metadata (auto-detected from git if available)
+    repo_name: Optional[str] = None  # Auto-detected from git or directory name
     
     # LLM settings - CHANGED: Use gpt-4o by default (128K context)
     llm_model_name: str = "github_copilot/gpt-4o"  # Changed from gpt-4o-mini
@@ -34,29 +37,32 @@ class Config:
     embedding_func_max_async: int = 48  # Concurrent embedding calls
     
     @classmethod
-    def from_env(cls) -> "Config":
+    def from_env(cls, **overrides) -> "Config":
         """Create config from environment variables"""
         config_dict = {}
         
-        if repo := os.getenv("LIGHTRAG_REPO"):
-            config_dict["lightrag_repo"] = Path(repo)
+        if repo := os.getenv("REPO_PATH"):
+            config_dict["repo_path"] = Path(repo)
         
-        if working_dir := os.getenv("LIGHTRAG_WORKING_DIR"):
+        if working_dir := os.getenv("WORKING_DIR"):
             config_dict["working_dir"] = Path(working_dir)
         
-        if output_dir := os.getenv("LIGHTRAG_OUTPUT_DIR"):
+        if output_dir := os.getenv("OUTPUT_DIR"):
             config_dict["output_dir"] = Path(output_dir)
         
         if workspace := os.getenv("WORKSPACE"):
             config_dict["workspace"] = workspace
         
-        if llm_model := os.getenv("LIGHTRAG_LLM_MODEL"):
+        if repo_name := os.getenv("REPO_NAME"):
+            config_dict["repo_name"] = repo_name
+        
+        if llm_model := os.getenv("LLM_MODEL"):
             config_dict["llm_model_name"] = llm_model
         
-        if embed_model := os.getenv("LIGHTRAG_EMBEDDING_MODEL"):
+        if embed_model := os.getenv("EMBEDDING_MODEL"):
             config_dict["embedding_model_name"] = embed_model
         
-        if api_key := os.getenv("LIGHTRAG_API_KEY"):
+        if api_key := os.getenv("API_KEY"):
             config_dict["api_key"] = api_key
         
         if min_size := os.getenv("MIN_FILE_SIZE"):
@@ -75,13 +81,46 @@ class Config:
         if embed_async := os.getenv("EMBEDDING_FUNC_MAX_ASYNC"):
             config_dict["embedding_func_max_async"] = int(embed_async)
         
+        # Apply overrides
+        config_dict.update(overrides)
+        
         return cls(**config_dict)
     
     def validate(self):
         """Validate configuration"""
-        if not self.lightrag_repo.exists():
-            raise ValueError(f"Repository path does not exist: {self.lightrag_repo}")
+        if not self.repo_path.exists():
+            raise ValueError(f"Repository path does not exist: {self.repo_path}")
+        
+        # Auto-detect repo name if not set
+        if self.repo_name is None:
+            self.repo_name = self._detect_repo_name()
         
         # Create output directory if it doesn't exist
         self.working_dir.mkdir(parents=True, exist_ok=True)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+    
+    def _detect_repo_name(self) -> str:
+        """Auto-detect repository name from git or directory name"""
+        import subprocess
+        
+        # Try to get from git remote
+        try:
+            result = subprocess.run(
+                ["git", "remote", "get-url", "origin"],
+                cwd=self.repo_path,
+                capture_output=True,
+                text=True,
+                timeout=5
+            )
+            if result.returncode == 0:
+                url = result.stdout.strip()
+                # Extract repo name from URL (e.g., https://github.com/user/repo.git -> repo)
+                name = url.rstrip('/').split('/')[-1]
+                if name.endswith('.git'):
+                    name = name[:-4]
+                return name
+        except Exception:
+            pass
+        
+        # Fallback to directory name
+        return self.repo_path.resolve().name

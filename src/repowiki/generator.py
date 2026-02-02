@@ -17,13 +17,10 @@ class WikiGenerator:
         self.config.validate()
         self.extended = extended
         
-        # Add LightRAG to path
-        sys.path.insert(0, str(self.config.lightrag_repo))
-        
-        # Set API key in environment (for LightRAG)
+        # Set API key in environment
         os.environ["OPENAI_API_KEY"] = self.config.api_key
         
-        # Import LightRAG
+        # Import LightRAG (assumes it's installed via pip)
         from lightrag import LightRAG, QueryParam
         from lightrag.llm.llama_index_impl import (
             llama_index_complete_if_cache,
@@ -41,7 +38,7 @@ class WikiGenerator:
         self.LiteLLM = LiteLLM
         self.LiteLLMEmbedding = LiteLLMEmbedding
         
-        print(f"🤖 Using GitHub Copilot models (like lightrag_openspec)")
+        print(f"🤖 Using GitHub Copilot models")
         print(f"   LLM: {self.config.llm_model_name}")
         
         self.rag = None
@@ -188,9 +185,9 @@ class WikiGenerator:
     
     async def generate_root_index(self, structure: Dict):
         """Generate root README with full hierarchy"""
-        content = """# LightRAG Repository Wiki
+        content = f"""# {self.config.repo_name} Repository Wiki
 
-Welcome to the comprehensive LightRAG documentation!
+Welcome to the comprehensive {self.config.repo_name} documentation!
 
 This wiki was automatically generated from the codebase using LightRAG's knowledge graph.
 

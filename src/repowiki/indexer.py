@@ -15,13 +15,10 @@ class RepositoryIndexer:
         self.config = config or Config()
         self.config.validate()
         
-        # Add LightRAG to path
-        sys.path.insert(0, str(self.config.lightrag_repo))
-        
-        # Set API key in environment (for LightRAG)
+        # Set API key in environment
         os.environ["OPENAI_API_KEY"] = self.config.api_key
         
-        # Import LightRAG
+        # Import LightRAG (assumes it's installed via pip)
         from lightrag import LightRAG
         from lightrag.llm.llama_index_impl import (
             llama_index_complete_if_cache,
@@ -90,7 +87,7 @@ class RepositoryIndexer:
     
     def collect_files(self) -> List[Path]:
         """Collect files to index from repository"""
-        repo_path = Path(self.config.lightrag_repo)
+        repo_path = Path(self.config.repo_path)
         
         # File patterns to include (code and docs only)
         include_patterns = ['*.py', '*.md', '*.txt']
@@ -135,7 +132,7 @@ class RepositoryIndexer:
                 return False, None, None
             
             # Get relative path for better context
-            rel_path = file_path.relative_to(self.config.lightrag_repo)
+            rel_path = file_path.relative_to(self.config.repo_path)
             
             # Add file context to content
             full_content = f"# File: {rel_path}\n\n{content}"

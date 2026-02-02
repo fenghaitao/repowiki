@@ -16,20 +16,20 @@ def test_config_defaults():
 def test_config_custom():
     """Test custom configuration"""
     config = Config(
-        lightrag_repo=Path("/custom/path"),
+        repo_path=Path("/custom/path"),
         workspace="test"
     )
     
-    assert config.lightrag_repo == Path("/custom/path")
+    assert config.repo_path == Path("/custom/path")
     assert config.workspace == "test"
 
 
 def test_config_from_env(monkeypatch):
     """Test configuration from environment"""
-    monkeypatch.setenv("LIGHTRAG_REPO", "/env/path")
-    monkeypatch.setenv("LIGHTRAG_WORKING_DIR", "/env/working")
+    monkeypatch.setenv("REPO_PATH", "/env/path")
+    monkeypatch.setenv("WORKING_DIR", "/env/working")
     
     config = Config.from_env()
     
-    assert config.lightrag_repo == Path("/env/path")
+    assert config.repo_path == Path("/env/path")
     assert config.working_dir == Path("/env/working")

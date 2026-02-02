@@ -37,12 +37,12 @@ async def run_generate(config: Config, extended: bool = False):
 async def run_all(config: Config, extended: bool = False):
     """Run both indexing and generation"""
     print("\n" + "=" * 80)
-    print("🚀 LIGHTRAG REPOSITORY WIKI GENERATION")
+    print(f"🚀 {config.repo_name.upper()} REPOSITORY WIKI GENERATION")
     print("=" * 80)
     mode_str = "extended " if extended else ""
     print(f"""
 This will:
-1. Index the LightRAG repository into a knowledge graph
+1. Index the {config.repo_name} repository into a knowledge graph
 2. Generate {mode_str}hierarchical wiki documentation
 
 Estimated time: {'60-90' if extended else '30-60'} minutes
@@ -95,6 +95,12 @@ def test_setup(config: Optional[Config] = None):
     if config is None:
         config = Config.from_env()
     
+    # Validate config to trigger auto-detection
+    try:
+        config.validate()
+    except Exception as e:
+        pass  # Will be caught in checks below
+    
     print("=" * 80)
     print("TESTING SETUP")
     print("=" * 80)
@@ -102,16 +108,17 @@ def test_setup(config: Optional[Config] = None):
     errors = []
     warnings = []
     
-    # Check LightRAG repository
-    if config.lightrag_repo.exists():
-        print(f"✅ LightRAG repository found: {config.lightrag_repo}")
+    # Check repository
+    if config.repo_path.exists():
+        print(f"✅ Repository found: {config.repo_path}")
+        print(f"   Repository name: {config.repo_name}")
         
-        py_files = list(config.lightrag_repo.glob("**/*.py"))
-        md_files = list(config.lightrag_repo.glob("**/*.md"))
+        py_files = list(config.repo_path.glob("**/*.py"))
+        md_files = list(config.repo_path.glob("**/*.md"))
         print(f"   - Python files: {len(py_files)}")
         print(f"   - Markdown files: {len(md_files)}")
     else:
-        errors.append(f"❌ LightRAG repository not found: {config.lightrag_repo}")
+        errors.append(f"❌ Repository not found: {config.repo_path}")
     
     # Check Python version
     py_version = sys.version_info
@@ -121,12 +128,12 @@ def test_setup(config: Optional[Config] = None):
         errors.append(f"❌ Python 3.8+ required, found {py_version.major}.{py_version.minor}")
     
     # Try importing LightRAG
-    sys.path.insert(0, str(config.lightrag_repo))
     try:
         import lightrag
         print("✅ LightRAG module can be imported")
     except ImportError as e:
         errors.append(f"❌ Cannot import LightRAG: {e}")
+        warnings.append("⚠️  Install LightRAG: pip install lightrag")
     
     # Check for OpenAI API key
     import os
@@ -184,7 +191,7 @@ def main():
     index_parser.add_argument(
         "--repo",
         type=Path,
-        help="Path to LightRAG repository"
+        help="Path to repository (default: current directory)"
     )
     index_parser.add_argument(
         "--working-dir",
@@ -220,7 +227,7 @@ def main():
     all_parser.add_argument(
         "--repo",
         type=Path,
-        help="Path to LightRAG repository"
+        help="Path to repository (default: current directory)"
     )
     all_parser.add_argument(
         "--extended",
@@ -238,7 +245,7 @@ def main():
     test_parser.add_argument(
         "--repo",
         type=Path,
-        help="Path to LightRAG repository"
+        help="Path to repository (default: current directory)"
     )
     
     args = parser.parse_args()
@@ -246,7 +253,7 @@ def main():
     # Build config from args
     config_kwargs = {}
     if hasattr(args, 'repo') and args.repo:
-        config_kwargs['lightrag_repo'] = args.repo
+        config_kwargs['repo_path'] = args.repo
     if hasattr(args, 'working_dir') and args.working_dir:
         config_kwargs['working_dir'] = args.working_dir
     if hasattr(args, 'output') and args.output:
