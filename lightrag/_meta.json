@@ -1,0 +1,11 @@
+{
+  "owner": "fenghaitao",
+  "slug": "repowiki",
+  "displayName": "RepoWiki - LightRAG Wiki Generator",
+  "latest": {
+    "version": "1.0.0",
+    "publishedAt": 1738626000000,
+    "commit": "https://github.com/fenghaitao/repowiki"
+  },
+  "history": []
+}
