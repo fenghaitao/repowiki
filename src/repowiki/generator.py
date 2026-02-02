@@ -82,6 +82,9 @@ class WikiGenerator:
             llm_model_func=self._create_llm_func,
             embedding_func=embedding_func_wrapped,
             llm_model_name=self.config.llm_model_name,
+            # Parallel processing configuration (same as indexer for consistency)
+            llm_model_max_async=self.config.llm_model_max_async,
+            embedding_func_max_async=self.config.embedding_func_max_async,
         )
         # Initialize storages
         await self.rag.initialize_storages()
