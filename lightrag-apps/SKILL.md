@@ -177,14 +177,14 @@ The generator automatically selects appropriate modes for different sections.
 ### Document Your Own Project
 ```bash
 cd /path/to/your/project
-uv run /path/to/lightrag/scripts/repowiki.py all --extended
+uv run /path/to/lightrag-apps/scripts/repowiki.py all --extended
 ```
 
 ### Document Open Source Project
 ```bash
 git clone https://github.com/user/project
 cd project
-uv run /path/to/lightrag/scripts/repowiki.py all --extended
+uv run /path/to/lightrag-apps/scripts/repowiki.py all --extended
 ```
 
 ### Re-generate After Code Changes
@@ -279,7 +279,7 @@ uv run {baseDir}/scripts/repowiki.py index --repo /path/to/project
 Add to `.git/hooks/post-commit`:
 ```bash
 #!/bin/bash
-uv run /path/to/lightrag/scripts/repowiki.py all --extended
+uv run /path/to/lightrag-apps/scripts/repowiki.py all --extended
 ```
 
 ### CI/CD Pipeline

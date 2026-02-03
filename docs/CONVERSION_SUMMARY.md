@@ -8,7 +8,7 @@ Successfully converted the `repowiki` repository into a ClawdHub skill following
 
 ### Core Skill Files
 
-1. **lightrag/SKILL.md** (325 lines)
+1. **lightrag-apps/SKILL.md** (325 lines)
    - Complete skill documentation
    - Quick start guide
    - All commands (test, index, generate, all)
@@ -17,14 +17,14 @@ Successfully converted the `repowiki` repository into a ClawdHub skill following
    - Performance metrics
    - Examples and troubleshooting
 
-2. **lightrag/_meta.json** (252 bytes)
+2. **lightrag-apps/_meta.json** (252 bytes)
    - Skill metadata for ClawdHub registry
    - Owner: dbhurley
    - Slug: lightrag
    - Display name: LightRAG Wiki Generator
    - Version: 1.0.0
 
-3. **lightrag/scripts/lightrag.py** (804 lines)
+3. **lightrag-apps/scripts/repowiki.py** (804 lines)
    - Self-contained script with PEP 723 dependencies
    - Complete CLI implementation
    - Config class with environment variable support
@@ -35,13 +35,13 @@ Successfully converted the `repowiki` repository into a ClawdHub skill following
 
 ### Reference Documentation
 
-4. **lightrag/references/query-modes.md**
+4. **lightrag-apps/references/query-modes.md**
    - Explanation of LightRAG query modes
    - Mode selection guidelines
    - Performance characteristics
    - Usage in wiki generation
 
-5. **lightrag/references/configuration.md**
+5. **lightrag-apps/references/configuration.md**
    - Complete configuration guide
    - Environment variables
    - Default settings
@@ -50,7 +50,7 @@ Successfully converted the `repowiki` repository into a ClawdHub skill following
    - Multi-workspace usage
    - Troubleshooting
 
-6. **lightrag/README.md**
+6. **lightrag-apps/README.md**
    - Skill overview
    - Quick test instructions
    - Key features
@@ -59,7 +59,7 @@ Successfully converted the `repowiki` repository into a ClawdHub skill following
 ## Directory Structure
 
 ```
-lightrag/
+lightrag-apps/
 ├── README.md                      # Skill overview
 ├── SKILL.md                       # Complete documentation
 ├── _meta.json                     # Metadata
@@ -67,7 +67,7 @@ lightrag/
 │   ├── configuration.md
 │   └── query-modes.md
 └── scripts/                       # Executable scripts
-    └── lightrag.py                # Main script (executable)
+    └── repowiki.py                # Main script (executable)
 ```
 
 ## Key Features
@@ -83,7 +83,7 @@ lightrag/
 
 ### Unique to LightRAG Skill
 
-✅ **Single script**: Unified lightrag.py (vs multiple scripts in pptx-creator)
+✅ **Single script**: Unified repowiki.py (vs multiple scripts in pptx-creator)
 ✅ **Async operations**: Full async/await support
 ✅ **CLI subcommands**: test, index, generate, all
 ✅ **Knowledge graphs**: LightRAG integration
@@ -95,23 +95,23 @@ lightrag/
 ### Test Setup
 ```bash
 cd /path/to/any/repository
-uv run lightrag/scripts/lightrag.py test
+uv run lightrag-apps/scripts/repowiki.py test
 ```
 
 ### Generate Wiki (Quick)
 ```bash
 cd /path/to/your/project
-uv run lightrag/scripts/lightrag.py all --extended
+uv run lightrag-apps/scripts/repowiki.py all --extended
 ```
 
 ### Index Only
 ```bash
-uv run lightrag/scripts/lightrag.py index --repo /path/to/project
+uv run lightrag-apps/scripts/repowiki.py index --repo /path/to/project
 ```
 
 ### Generate from Existing Index
 ```bash
-uv run lightrag/scripts/lightrag.py generate --extended
+uv run lightrag-apps/scripts/repowiki.py generate --extended
 ```
 
 ## Configuration
@@ -197,13 +197,13 @@ wiki_docs/
 
 ## Comparison to Source Repository
 
-### From repowiki to lightrag skill
+### From repowiki to lightrag-apps skill
 
-| Aspect | repowiki | lightrag skill |
+| Aspect | repowiki | lightrag-apps skill |
 |--------|----------|----------------|
 | Structure | Python package | ClawdHub skill |
 | Installation | `pip install -e .` | `uv run` |
-| Entry point | `repowiki` CLI | `lightrag.py` script |
+| Entry point | `repowiki` CLI | `repowiki.py` script |
 | Dependencies | pyproject.toml | PEP 723 inline |
 | Documentation | README.md | SKILL.md |
 | Distribution | Python package | Skill directory |
@@ -243,12 +243,12 @@ Can be combined with other dbhurley skills:
 1. **Test the skill**:
    ```bash
    cd /path/to/test/repo
-   uv run lightrag/scripts/lightrag.py test
+   uv run lightrag-apps/scripts/repowiki.py test
    ```
 
 2. **Generate wiki**:
    ```bash
-   uv run lightrag/scripts/lightrag.py all --extended
+   uv run lightrag-apps/scripts/repowiki.py all --extended
    ```
 
 3. **Review output**:
@@ -257,7 +257,7 @@ Can be combined with other dbhurley skills:
    - Review generated content
 
 4. **Optional: Deploy to ClawdHub**:
-   - Copy `lightrag/` to ClawdHub skills directory
+   - Copy `lightrag-apps/` to ClawdHub skills directory
    - Update _meta.json if needed
    - Commit and publish
 

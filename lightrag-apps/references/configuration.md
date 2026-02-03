@@ -181,17 +181,17 @@ Use different workspaces for different purposes:
 ```bash
 # Main documentation
 export WORKSPACE="main"
-uv run lightrag.py all --extended
+uv run lightrag-apps/scripts/repowiki.py all --extended
 
 # Experimental features branch
 export WORKSPACE="experimental"
 export REPO_PATH="/path/to/feature-branch"
-uv run lightrag.py all
+uv run lightrag-apps/scripts/repowiki.py all
 
 # Different versions
 export WORKSPACE="v1.0"
 export REPO_PATH="/path/to/v1.0"
-uv run lightrag.py all
+uv run lightrag-apps/scripts/repowiki.py all
 ```
 
 ## Troubleshooting
@@ -241,5 +241,5 @@ For OpenAI:
 2. **Use extended mode** - More comprehensive documentation
 3. **Monitor first run** - Indexing takes time initially
 4. **Cache is your friend** - Subsequent runs are much faster
-5. **Test setup first** - Run `lightrag.py test` before indexing
+5. **Test setup first** - Run `lightrag-apps/scripts/repowiki.py test` before indexing
 6. **Backup storage** - Keep `repowiki_storage/` for faster regeneration

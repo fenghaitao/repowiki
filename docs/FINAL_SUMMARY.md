@@ -6,10 +6,10 @@ Successfully converted the **repowiki** repository into a **lightrag** ClawdHub 
 
 ## 📦 Deliverables
 
-### Complete Skill Package: `lightrag/`
+### Complete Skill Package: `lightrag-apps/`
 
 ```
-lightrag/
+lightrag-apps/
 ├── SKILL.md (325 lines)              # Complete skill documentation
 ├── _meta.json                         # ClawdHub metadata
 ├── README.md                          # Skill overview
@@ -99,11 +99,11 @@ repowiki all --extended  # ✓ Works
 
 1. ✅ **Analyzed** pptx-creator skill structure
 2. ✅ **Analyzed** repowiki repository code
-3. ✅ **Created** lightrag skill directory structure
+3. ✅ **Created** lightrag-apps skill directory structure
 4. ✅ **Wrote** SKILL.md (325 lines) with complete docs
 5. ✅ **Created** _meta.json metadata file
 6. ✅ **Implemented** repowiki.py (827 lines) main script
-7. ✅ **Fixed** import naming conflict (lightrag.py → repowiki.py)
+7. ✅ **Fixed** import naming conflict (repowiki.py → repowiki.py)
 8. ✅ **Updated** to use LlamaIndex API (correct implementation)
 9. ✅ **Removed** problematic pipmaster dependency
 10. ✅ **Created** reference documentation (2 guides)
@@ -149,7 +149,7 @@ repowiki all --extended  # ✓ Works
 
 1. **Documentation review** - All docs are complete
 2. **Manual testing** - Using existing repowiki installation
-3. **ClawdHub deployment** - Copy lightrag/ to skills repo
+3. **ClawdHub deployment** - Copy lightrag-apps/ to skills repo
 4. **Integration** - Works with other dbhurley skills
 5. **Production use** - Generate wikis for any repository
 
@@ -198,12 +198,12 @@ cp -r lightrag /path/to/clawdhub-skills/skills/dbhurley/
 
 ## 📝 Files Created
 
-1. **lightrag/SKILL.md** - Main skill documentation
-2. **lightrag/_meta.json** - ClawdHub metadata
-3. **lightrag/README.md** - Skill overview
-4. **lightrag/scripts/repowiki.py** - Main executable
-5. **lightrag/references/configuration.md** - Config guide
-6. **lightrag/references/query-modes.md** - Query guide
+1. **lightrag-apps/SKILL.md** - Main skill documentation
+2. **lightrag-apps/_meta.json** - ClawdHub metadata
+3. **lightrag-apps/README.md** - Skill overview
+4. **lightrag-apps/scripts/repowiki.py** - Main executable
+5. **lightrag-apps/references/configuration.md** - Config guide
+6. **lightrag-apps/references/query-modes.md** - Query guide
 7. **CONVERSION_SUMMARY.md** - Detailed conversion notes
 8. **FINAL_SUMMARY.md** - This document
 
@@ -224,4 +224,4 @@ cp -r lightrag /path/to/clawdhub-skills/skills/dbhurley/
 
 The repowiki repository has been successfully converted into a ClawdHub skill. While there's a known dependency issue with the upstream lightrag-hku package, the skill structure, documentation, and code are complete and ready for use. The existing repowiki installation demonstrates that all functionality works correctly.
 
-**The lightrag skill is ready for production use!**
+**The lightrag-apps skill is ready for production use!**

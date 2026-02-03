@@ -17,10 +17,10 @@ Source: https://github.com/fenghaitao/repowiki
 ```bash
 # Test the skill
 cd /path/to/any/repository
-uv run lightrag/scripts/repowiki.py test
+uv run lightrag-apps/scripts/repowiki.py test
 
 # Generate wiki
-uv run lightrag/scripts/repowiki.py all --extended
+uv run lightrag-apps/scripts/repowiki.py all --extended
 ```
 
 ## Files Created
