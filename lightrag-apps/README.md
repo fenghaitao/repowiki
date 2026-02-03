@@ -23,6 +23,8 @@ uv run lightrag-apps/scripts/repowiki.py test
 uv run lightrag-apps/scripts/repowiki.py all --extended
 ```
 
+**Note:** You may see a harmless warning about `llama-index` installation failing. This is expected - the script uses `llama-index-core` which is already installed. The warning can be safely ignored.
+
 ## Files Created
 
 - `SKILL.md` - Complete documentation for the skill

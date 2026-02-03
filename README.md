@@ -205,6 +205,15 @@ repowiki test
 
 **Note**: The indexer skips files smaller than 50 bytes by default. Adjust with `MIN_FILE_SIZE` environment variable if needed.
 
+### Troubleshooting
+
+**Pipmaster Warning**: You may see this warning when running commands:
+```
+pipmaster.package_manager - ERROR - Command failed with exit code 1: ... -m pip install --upgrade llama-index
+```
+
+This is **harmless and can be ignored**. The script uses `llama-index-core` (which is correctly installed), but `pipmaster` (part of `lightrag-hku`) tries to check for the old `llama-index` package name. The script will continue to work normally despite this warning.
+
 ## 📈 Performance
 
 | Mode | Pages | Time | Cost |
